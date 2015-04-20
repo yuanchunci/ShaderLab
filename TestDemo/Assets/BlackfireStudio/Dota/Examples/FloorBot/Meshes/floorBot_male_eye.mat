@@ -1,0 +1,195 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: floorBot_male_eye
+  m_Shader: {fileID: 4800000, guid: 46fb80c2649275e4e8570aa55538bf35, type: 3}
+  m_ShaderKeywords:
+  - _DETAIL1BLENDMODE_OFF
+  - _GAMMA_SPACE
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _basetexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 0b228cca36c361d4d814aa28f604447c, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _normalmap
+        second:
+          m_Texture: {fileID: 2800000, guid: 4724455be221c9b48899f07add0e4d70, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _maskmap1
+        second:
+          m_Texture: {fileID: 2800000, guid: f3a56ad68908171489b761b65d8446c7, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _maskmap2
+        second:
+          m_Texture: {fileID: 2800000, guid: 911ede319b5493f4da65e499c819f222, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _fresnelwarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _envmap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _detail1map
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _specularwarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _diffusewarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _fresnelcolorwarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _colorwarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _ambientscale
+        second: 1
+      data:
+        first:
+          name: _rimlightscale
+        second: 1
+      data:
+        first:
+          name: _rimlightblendtofull
+        second: 0
+      data:
+        first:
+          name: _specularexponent
+        second: 1
+      data:
+        first:
+          name: _specularscale
+        second: 1
+      data:
+        first:
+          name: _specularblendtofull
+        second: 0
+      data:
+        first:
+          name: _selfillumblendtofull
+        second: 0
+      data:
+        first:
+          name: _fresnelwarpblendtonone
+        second: 0
+      data:
+        first:
+          name: _envmapintensity
+        second: 0
+      data:
+        first:
+          name: _maskenvbymetalness
+        second: 0
+      data:
+        first:
+          name: _detail1blendmode
+        second: 0
+      data:
+        first:
+          name: _detail1scale
+        second: 1
+      data:
+        first:
+          name: _detail1blendfactor
+        second: 1
+      data:
+        first:
+          name: _detail1blendtofull
+        second: 0
+      data:
+        first:
+          name: _detail1scrollrate
+        second: 0
+      data:
+        first:
+          name: _detail1scrollangle
+        second: 0
+      data:
+        first:
+          name: _colorwarpblendtonone
+        second: 0
+      data:
+        first:
+          name: _diffusewarpblendtofull
+        second: 0
+      data:
+        first:
+          name: _fresnelcolorwarpblendtonone
+        second: 0
+      data:
+        first:
+          name: _specularwarpintensity
+        second: 0
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _rimlightcolor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _specularcolor
+        second: {r: 1, g: 1, b: 1, a: 1}

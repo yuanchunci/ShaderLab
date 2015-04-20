@@ -1,0 +1,246 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: ball00
+  m_Shader: {fileID: 4800000, guid: d6efaa283e65c4ed883e9c157061d936, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _DecalTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Detail
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MatCap
+        second:
+          m_Texture: {fileID: 2800000, guid: fb3fa4e12b4f8443bb8266bc913a850b, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MatRim
+        second:
+          m_Texture: {fileID: 2800000, guid: 6024c4641db2c461d8df424a2df1d2c0, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _basetexture
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _matcap
+        second:
+          m_Texture: {fileID: 2800000, guid: daa6a0ce484bc1147ba58a37cd90b5da, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BlendTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Ramp2D
+        second:
+          m_Texture: {fileID: 2800000, guid: 1efa4a6f12b784d8a845e81e7c5896f8, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NormalMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MatcapTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 2f282725c553c43758860c574902bc11, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Texture
+        second:
+          m_Texture: {fileID: 2800000, guid: 23feeb2dda9fd4cef81f6d4fc8327d9e, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: PixelSnap
+        second: 0
+      data:
+        first:
+          name: _Shininess
+        second: 2
+      data:
+        first:
+          name: _Outline
+        second: .5
+      data:
+        first:
+          name: _ambientscale
+        second: 1
+      data:
+        first:
+          name: _diffusescale
+        second: 1
+      data:
+        first:
+          name: _mulscale
+        second: .800000012
+      data:
+        first:
+          name: _addscale
+        second: .800000012
+      data:
+        first:
+          name: _rimlightscale
+        second: 1
+      data:
+        first:
+          name: _rimlightpower
+        second: 0
+      data:
+        first:
+          name: _MainTexIntense
+        second: 2.5
+      data:
+        first:
+          name: _RampTexIntense
+        second: .5
+      data:
+        first:
+          name: _Blend
+        second: .607142866
+      data:
+        first:
+          name: _Intensity
+        second: .550000012
+      data:
+        first:
+          name: _LightingIntensity
+        second: 1.76428568
+      data:
+        first:
+          name: _factorA
+        second: 1.39999998
+      data:
+        first:
+          name: _factorB
+        second: 0
+      data:
+        first:
+          name: _factorC
+        second: .0500000007
+      data:
+        first:
+          name: _factorD
+        second: 0
+      data:
+        first:
+          name: _Strength
+        second: 1.05357146
+      data:
+        first:
+          name: _Parallax
+        second: .0199999996
+      data:
+        first:
+          name: _factor
+        second: 1
+      data:
+        first:
+          name: _SpecInt
+        second: 1
+      data:
+        first:
+          name: _Fresnel
+        second: 0
+      data:
+        first:
+          name: _Inside
+        second: .200000003
+      data:
+        first:
+          name: _Rim
+        second: 1
+      data:
+        first:
+          name: _Speed
+        second: 2.58928561
+      data:
+        first:
+          name: _Tile
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: .5, g: .5, b: .5, a: 1}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _rimlightcolor
+        second: {r: 1, g: 1, b: 1, a: 1}

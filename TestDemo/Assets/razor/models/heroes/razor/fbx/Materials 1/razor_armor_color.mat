@@ -1,0 +1,245 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: razor_armor_color
+  m_Shader: {fileID: 4800000, guid: 46fb80c2649275e4e8570aa55538bf35, type: 3}
+  m_ShaderKeywords:
+  - _GAMMA_SPACE
+  - _DETAIL1BLENDMODE_OFF
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _basetexture
+        second:
+          m_Texture: {fileID: 2800000, guid: ba251af2e29ee4f92840097548a47106, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _normalmap
+        second:
+          m_Texture: {fileID: 2800000, guid: 7f990200a476b42d9836e31038c75dea, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _maskmap1
+        second:
+          m_Texture: {fileID: 2800000, guid: 5564689356f444eb5a52e8b558db369f, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _maskmap2
+        second:
+          m_Texture: {fileID: 2800000, guid: ff9c5186ad3714743a5691362a604214, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _fresnelwarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _envmap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _detail1map
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _specularwarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _diffusewarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _fresnelcolorwarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _colorwarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _ParallaxMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Shininess
+        second: 10
+      data:
+        first:
+          name: _alpha
+        second: 1
+      data:
+        first:
+          name: _rimlightscale
+        second: 1
+      data:
+        first:
+          name: _rimlightblendtofull
+        second: 0
+      data:
+        first:
+          name: _specularexponent
+        second: 1
+      data:
+        first:
+          name: _specularscale
+        second: 1
+      data:
+        first:
+          name: _specularblendtofull
+        second: 0
+      data:
+        first:
+          name: _selfillumblendtofull
+        second: 0
+      data:
+        first:
+          name: _HueShift
+        second: 359
+      data:
+        first:
+          name: _Sat
+        second: 1
+      data:
+        first:
+          name: _Val
+        second: 1
+      data:
+        first:
+          name: _ambientscale
+        second: 1
+      data:
+        first:
+          name: _fresnelwarpblendtonone
+        second: 0
+      data:
+        first:
+          name: _envmapintensity
+        second: 0
+      data:
+        first:
+          name: _maskenvbymetalness
+        second: 0
+      data:
+        first:
+          name: _detail1blendmode
+        second: 0
+      data:
+        first:
+          name: _detail1scale
+        second: 1
+      data:
+        first:
+          name: _detail1blendfactor
+        second: 1
+      data:
+        first:
+          name: _detail1blendtofull
+        second: 0
+      data:
+        first:
+          name: _detail1scrollrate
+        second: 0
+      data:
+        first:
+          name: _detail1scrollangle
+        second: 0
+      data:
+        first:
+          name: _colorwarpblendtonone
+        second: 0
+      data:
+        first:
+          name: _diffusewarpblendtofull
+        second: 0
+      data:
+        first:
+          name: _fresnelcolorwarpblendtonone
+        second: 0
+      data:
+        first:
+          name: _specularwarpintensity
+        second: 0
+      data:
+        first:
+          name: _cutoff
+        second: 0
+      data:
+        first:
+          name: _Parallax
+        second: .00999999978
+      data:
+        first:
+          name: _MaxTexCoordOffset
+        second: .00999999978
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _rimlightcolor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _specularcolor
+        second: {r: 1, g: 1, b: 1, a: 1}

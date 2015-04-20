@@ -1,0 +1,97 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: BonusMat
+  m_Shader: {fileID: 4800000, guid: f21c5c496aefd6547b92828443979f2e, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 7dbd327db20e22740b1d128a04b1573e, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MatCap
+        second:
+          m_Texture: {fileID: 2800000, guid: 2ab7686dd4ae2b241a652f6b073823d8, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MatRim
+        second:
+          m_Texture: {fileID: 2800000, guid: e60bcfb2ff37d764db5784337b4b536c, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _NormalTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 96f458cfd32cbaf45a5601063a9a1357, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _AOTex
+        second:
+          m_Texture: {fileID: 2800000, guid: a1f3eda3911465d4584bbae5e3d970c1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _AOLUT
+        second:
+          m_Texture: {fileID: 2800000, guid: a1f3eda3911465d4584bbae5e3d970c1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MatCapLUT
+        second:
+          m_Texture: {fileID: 2800000, guid: e604bc31309b61a40b32f1055a0db41c, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _RimLUT
+        second:
+          m_Texture: {fileID: 2800000, guid: 1bcd003609627e945a1c0942697a9ce3, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _RimPower
+        second: 1.88
+      data:
+        first:
+          name: _MatCapBlendFactor
+        second: 1.50999999
+      data:
+        first:
+          name: _InvertY
+        second: -1
+      data:
+        first:
+          name: _AoPower
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: .452800602, g: .706863046, b: .91911763, a: 1}
