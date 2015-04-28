@@ -37,16 +37,12 @@ Material:
     m_Floats:
       data:
         first:
-          name: _Outline
-        second: .00892857183
-      data:
-        first:
           name: _ambientscale
-        second: 1
+        second: 0
       data:
         first:
           name: _diffusescale
-        second: 1
+        second: 0
       data:
         first:
           name: _mulscale
@@ -54,7 +50,11 @@ Material:
       data:
         first:
           name: _addscale
-        second: 5
+        second: 3
+      data:
+        first:
+          name: _Outline
+        second: .00267857173
     m_Colors:
       data:
         first:

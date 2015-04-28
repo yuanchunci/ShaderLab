@@ -12,6 +12,16 @@ fixed3 getLocalCoords(fixed4 encodedNormal)
 	return localCoords;
 }
 
+fixed3 getNormal(fixed4 encodedNormal, fixed3 tangentWorld, fixed3 binormalWorld, fixed3 normalWorld)
+{
+	fixed3 localCoords = getLocalCoords(encodedNormal);
+	fixed3x3 local2WorldTranspose = fixed3x3(
+									tangentWorld, 
+									binormalWorld, 
+									normalWorld);
+	return normalize(mul(localCoords, local2WorldTranspose));
+}
+
 fixed4 getLightDirAndAtten(v2f input)
 {
 	fixed4 lightDirection;
@@ -47,7 +57,18 @@ fixed3 getRimLight(fixed3 rimLight)
 	return rimLight;
 }
 
+fixed Fresnel( fixed3 N, fixed3 V, fixed X )
+{
+	fixed Fresnel = 1.0 - saturate( dot( N, V ) );
+	return pow(Fresnel, X);
+}
+
 inline fixed3 toLinear(fixed3 srcColor)
 { 
 	return pow(srcColor, 2.2); 
+}
+
+inline fixed3 toGamma(fixed3 srcColor)
+{ 
+	return pow(srcColor, 1 / 2.2); 
 }

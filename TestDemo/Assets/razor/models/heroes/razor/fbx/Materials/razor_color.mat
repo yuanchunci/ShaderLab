@@ -80,7 +80,7 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: __maskmap2
+          name: _specularwarp
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -88,13 +88,6 @@ Material:
       data:
         first:
           name: _diffusewarp
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _specularwarp
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -113,14 +106,17 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: __maskmap2
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
-          name: _Shininess
-        second: 10
-      data:
-        first:
-          name: _alpha
+          name: _ambientscale
         second: 1
       data:
         first:
@@ -146,10 +142,6 @@ Material:
         first:
           name: _selfillumblendtofull
         second: 0
-      data:
-        first:
-          name: _ambientscale
-        second: 1
       data:
         first:
           name: _fresnelwarpblendtonone
@@ -188,6 +180,30 @@ Material:
         second: 0
       data:
         first:
+          name: _colorwarpblendtonone
+        second: 0
+      data:
+        first:
+          name: _diffusewarpblendtofull
+        second: 0
+      data:
+        first:
+          name: _fresnelcolorwarpblendtonone
+        second: 0
+      data:
+        first:
+          name: _specularwarpintensity
+        second: 0
+      data:
+        first:
+          name: _Shininess
+        second: 10
+      data:
+        first:
+          name: _alpha
+        second: 1
+      data:
+        first:
           name: _HueShift
         second: 359
       data:
@@ -200,22 +216,6 @@ Material:
         second: 1
       data:
         first:
-          name: _diffusewarpblendtofull
-        second: 0
-      data:
-        first:
-          name: _specularwarpintensity
-        second: 0
-      data:
-        first:
-          name: _fresnelcolorwarpblendtonone
-        second: 0
-      data:
-        first:
-          name: _colorwarpblendtonone
-        second: 0
-      data:
-        first:
           name: _cutoff
         second: 0
     m_Colors:
@@ -225,13 +225,13 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
           name: _rimlightcolor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _specularcolor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _SpecColor
         second: {r: 1, g: 1, b: 1, a: 1}

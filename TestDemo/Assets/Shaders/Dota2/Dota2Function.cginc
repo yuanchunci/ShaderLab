@@ -1,13 +1,35 @@
 // kokichi88
+void diffuseLighting(fixed3 diffuseReflection, v2f input, inout fixed3 finalDiffuse)
+{
+	#ifdef ONE_LIGHT
+		finalDiffuse = (diffuseReflection + UNITY_LIGHTMODEL_AMBIENT.rgb * _ambientscale );
+	#elif defined(LIGHT_PROBES)
+		finalDiffuse = (ShadeSH9 (float4(input.normalWorld,1.0)) * _ambientscale );
+	#else
+		finalDiffuse = (diffuseReflection + ShadeSH9 (float4(input.normalWorld,1.0)) * _ambientscale );
+	#endif
+}
+
+void specularLighting(fixed3 V, fixed3 N, fixed3 L, fixed NdotL, fixed3 lightColor, fixed specularExponentByMask, inout fixed3 finalSpecular)
+{
+	fixed3 R = reflect( V, N ); // No half-vector so this is consistent in look with ps2.0
+	fixed RdotL = saturate( dot( L, -R ) );
+	fixed3 SpecularLighting = 0.0;
+	specularExponentByMask *= _specularexponent;
+	fixed flSpecularIntensity = NdotL * pow( RdotL, specularExponentByMask );
+	SpecularLighting = fixed3( flSpecularIntensity);
+	SpecularLighting *= lightColor;
+	finalSpecular += SpecularLighting; 
+}
 
 v2f vert(app_data input) 
 {
 	v2f output;
 
-	fixed3x3 modelMatrix = _Object2World;
-	fixed3x3 modelMatrixInverse = _World2Object; 
-	output.tangentWorld = normalize(mul(modelMatrix, input.tangent.xyz));
-	output.normalWorld = normalize(mul(input.normal, modelMatrixInverse));
+	fixed4x4 modelMatrix = _Object2World;
+	fixed4x4 modelMatrixInverse = _World2Object; 
+	output.tangentWorld = normalize(mul(modelMatrix, fixed4(input.tangent.xyz,0))).xyz;
+	output.normalWorld = normalize(mul(fixed4(input.normal,0), modelMatrixInverse)).xyz;
 	output.binormalWorld = normalize(cross(output.normalWorld, output.tangentWorld) * input.tangent.w); 
 	output.posWorld = mul(_Object2World, input.vertex);
 	output.tex = input.texcoord;
@@ -29,13 +51,16 @@ fixed4 frag(v2f input) : COLOR
 		if(encodedNormal.a > 0)
 			diffuseColor.rgb = low_shift_col(diffuseColor, shift);
 	#endif
+	diffuseColor.rgb = toLinear(diffuseColor.rgb);
 	
-	fixed3 localCoords = getLocalCoords(encodedNormal);
-	fixed3x3 local2WorldTranspose = fixed3x3(
-									input.tangentWorld, 
-									input.binormalWorld, 
-									input.normalWorld);
-	fixed3 normalDirection = normalize(mul(localCoords, local2WorldTranspose));
+	fixed metalnessMask = encodedNormal.b;
+	fixed specularMask = Mask2.r;
+	fixed rimMask = Mask2.g;
+	fixed tintByBaseMask = Mask2.b;
+	fixed specularExponentByMask = Mask2.a;
+	fixed3 normalDirection  = getNormal(encodedNormal, input.tangentWorld, 
+														input.binormalWorld, 
+														input.normalWorld);
 	fixed3 viewDirection = normalize(_WorldSpaceCameraPos - input.posWorld.xyz);
 	#ifndef LIGHT_PROBES
 		fixed4 lightDirection = getLightDirAndAtten(input);
@@ -45,63 +70,40 @@ fixed4 frag(v2f input) : COLOR
 		fixed3 diffuseReflection = lightDirection.w * lightColor * halfLambert;
 		fixed3 reflectionVector = normalize(2 * normalDirection * NdotL - lightDirection.xyz);
 	#endif
-	half3 fresnel = pow(1.0 - saturate(dot(normalDirection, viewDirection)), 5.0);
+	fixed3 fresnel = Fresnel(normalDirection, viewDirection, 5.0);
 	fresnel.b = 1.0 - fresnel.b;
+//	fresnel.b = max(fresnel.b, metalnessMask);
+	fixed3 finalDiffuse = 0;
+	fixed3 finalSpecular = 0;
 	#ifdef LIGHT_PROBES
-		// do nothing
-	#elif defined(SIMPLE)
-		fixed3 specularReflection = lightDirection.w * fresnel.b
-									* lightColor
-									* _specularcolor.rgb * pow(max(0.0, dot(reflectionVector, 
-																		  viewDirection)),
-																Mask2.a);
+		diffuseLighting(0, input, finalDiffuse);
+		fixed3 cSpecular = Mask2.r * _specularcolor.rgb * fresnel.b
+						 * saturate(dot(UNITY_MATRIX_V[1], normalDirection));
 	#else
-		fixed3 specularReflection = lightDirection.w * fresnel.b
-									* lightColor
-									* _specularcolor.rgb * pow(max(0.0, dot(reflectionVector, 
-																		  viewDirection)),
-																Mask2.a * _specularexponent);	
-	#endif
-	#ifdef ONE_LIGHT
-		finalColor.rgb = diffuseColor * (diffuseReflection + UNITY_LIGHTMODEL_AMBIENT.rgb * _ambientscale );
-	#elif defined(LIGHT_PROBES)
-		finalColor.rgb = diffuseColor * (ShadeSH9 (float4(input.normalWorld,1.0)) * _ambientscale );
-	#else
-		finalColor.rgb = diffuseColor * (diffuseReflection + ShadeSH9 (float4(input.normalWorld,1.0)) * _ambientscale );
+		diffuseLighting(diffuseReflection, input, finalDiffuse);
+		specularLighting(viewDirection, normalDirection, lightDirection.xyz, NdotL, lightColor, specularExponentByMask, finalSpecular);
+		fixed3 cSpecular = finalSpecular * _specularscale;
+		cSpecular *= lightDirection.w * _specularscale * specularMask;
+		fixed3 specularTint = lerp(diffuseColor, _specularcolor.rgb, tintByBaseMask);
+		cSpecular *= specularTint * fresnel.b;
 	#endif
 	
-	Mask2.r = toLinear(Mask2.r);
+	finalColor.rgb = finalDiffuse * diffuseColor.rgb;
 	
-	#ifdef LIGHT_PROBES
-		fixed3 specular = Mask2.r * _specularcolor.rgb * fresnel.b
-						 * saturate(dot(UNITY_MATRIX_V[1], input.normalWorld));
-	#elif defined(SIMPLE)
-		fixed3 specular = specularReflection
-						* Mask2.r
-						* lerp(finalColor.rgb + encodedNormal.b, _specularcolor, Mask2.b) 
-						* NdotL
-						* lightDirection.w;
-	#else
-		fixed3 specular = specularReflection * _specularscale
-						* Mask2.r
-						* lerp(finalColor.rgb + encodedNormal.b, _specularcolor, Mask2.b) 
-						* NdotL
-						* lightDirection.w;
-	#endif
-	
-	finalColor.rgb += specular;
-	finalColor.rgb = lerp(finalColor.rgb, specular, encodedNormal.b);
+	finalColor.rgb += cSpecular;
+	finalColor.rgb = lerp( finalColor.rgb, cSpecular, metalnessMask );
 	
 	#if defined(SIMPLE) || defined(LIGHT_PROBES)
-		fixed3 rimlight = Mask2.g * _rimlightcolor * fresnel.r
-						 * saturate(dot(UNITY_MATRIX_V[1], input.normalWorld));
+		fixed3 rimlight = rimMask  * fresnel.r
+							* _rimlightcolor
+						 	* saturate(dot(fixed3(0,1,0), normalDirection));
 	#else
-		fixed3 rimlight = max(Mask2.g, _rimlightblendtofull) * fresnel.r
-					 * _rimlightscale
-					 * _rimlightcolor
-					 * saturate(dot(UNITY_MATRIX_V[1], input.normalWorld));
+		fixed3 rimlight = max(rimMask, _rimlightblendtofull) * fresnel.r
+					 		* _rimlightscale
+					 		* _rimlightcolor
+					 		* saturate(dot(fixed3(0,1,0), normalDirection));
 	#endif
-	rimlight = getRimLight(rimlight);
+	rimlight = getRimLight(rimlight) * ( 1.0 - metalnessMask);
 	finalColor.rgb += rimlight;
 	
 	#if defined(SIMPLE) || defined(LIGHT_PROBES)
@@ -115,6 +117,7 @@ fixed4 frag(v2f input) : COLOR
 	#else
 		finalColor.a = 1;
 	#endif
-	return finalColor;
+	return fixed4(toGamma(finalColor.rgb), finalColor.a);
+//	return finalColor;
 }
 

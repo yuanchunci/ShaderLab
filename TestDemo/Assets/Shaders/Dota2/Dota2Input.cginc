@@ -33,7 +33,7 @@ struct app_data
 	fixed4 vertex : POSITION;
 	fixed3 normal : NORMAL;
 	fixed4 tangent : TANGENT;  
-	fixed4 texcoord : TEXCOORD0;
+	fixed2 texcoord : TEXCOORD0;
 };
 
 struct v2f
@@ -41,7 +41,7 @@ struct v2f
 	fixed4 pos : SV_POSITION;
 	fixed4 posWorld : TEXCOORD0;
 	// position of the vertex (and fragment) in world space 
-	fixed4 tex : TEXCOORD1;
+	fixed2 tex : TEXCOORD1;
 	fixed3 tangentWorld : TEXCOORD2;  
 	fixed3 normalWorld : TEXCOORD3;
 	fixed3 binormalWorld : TEXCOORD4;
