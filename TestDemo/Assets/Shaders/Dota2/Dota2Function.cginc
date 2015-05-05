@@ -26,10 +26,10 @@ v2f vert(app_data input)
 {
 	v2f output;
 
-	fixed4x4 modelMatrix = _Object2World;
-	fixed4x4 modelMatrixInverse = _World2Object; 
-	output.tangentWorld = normalize(mul(modelMatrix, fixed4(input.tangent.xyz,0))).xyz;
-	output.normalWorld = normalize(mul(fixed4(input.normal,0), modelMatrixInverse)).xyz;
+	fixed3x3 modelMatrix = (fixed3x3)_Object2World;
+	fixed3x3 modelMatrixInverse = (fixed3x3)_World2Object; 
+	output.tangentWorld = normalize(mul(modelMatrix, input.tangent.xyz));
+	output.normalWorld = normalize(mul(input.normal, modelMatrixInverse));
 	output.binormalWorld = normalize(cross(output.normalWorld, output.tangentWorld) * input.tangent.w); 
 	output.posWorld = mul(_Object2World, input.vertex);
 	output.tex = input.texcoord;

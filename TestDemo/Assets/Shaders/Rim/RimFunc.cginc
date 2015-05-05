@@ -35,10 +35,9 @@ v2f vert(app_data input)
 		output.cap = halfLambert;
 		fixed3 diffuseReflection = ambientLighting;
 	#elif defined(MAT_CAP)
-		fixed2 capCoord;
-		capCoord.x = dot(UNITY_MATRIX_IT_MV[0].xyz,input.normal);
-		capCoord.y = dot(UNITY_MATRIX_IT_MV[1].xyz,input.normal);
-		output.cap = capCoord * 0.5 + 0.5;
+		fixed3 capCoord = normalize(mul(input.normal,modelMatrixInverse));
+		capCoord = mul((fixed3x3)UNITY_MATRIX_V, capCoord);
+		output.cap = capCoord.xy * 0.5 + 0.5;
 		fixed3 diffuseReflection = ambientLighting;
 	#else
 		fixed3 lightColor = _LightColor0.rgb * 1.5;
