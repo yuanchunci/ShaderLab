@@ -5,7 +5,7 @@
       _Shininess ("Shininess", Float) = 10
    }
    SubShader {
-   Tags { "Queue" = "Geometry"} 
+   Tags { "Queue" = "Geometry-1"} 
       Pass {	
          Tags { "LightMode" = "ForwardBase" } 
             // pass for ambient light and first light source
