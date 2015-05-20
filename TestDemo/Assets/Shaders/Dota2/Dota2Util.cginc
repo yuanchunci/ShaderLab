@@ -2,13 +2,7 @@
 
 fixed3 getLocalCoords(fixed4 encodedNormal)
 {
-	fixed3 localCoords = fixed3(2.0 * encodedNormal.r - 1.0, 
-                2.0 * encodedNormal.g - 1.0, 0.0);
-	#if defined(SIMPLE)
-		localCoords.z = 1.0 - 0.5 * dot(localCoords, localCoords);
-	#else 
-    	localCoords.z = sqrt(1.0 - dot(localCoords, localCoords));
-	#endif
+	fixed3 localCoords = encodedNormal.rgb * 2 - 1; // for OpenGL ES
 	return localCoords;
 }
 
@@ -29,18 +23,10 @@ fixed4 getLightDirAndAtten(v2f input)
 		lightDirection.w = 1.0; // no attenuation
 		lightDirection.xyz = normalize(_WorldSpaceLightPos0.xyz);
 	#else
-		if (0.0 == _WorldSpaceLightPos0.w) // directional light?
-		{
-			lightDirection.w = 1.0; // no attenuation
-			lightDirection.xyz = normalize(_WorldSpaceLightPos0.xyz);
-		} 
-		else // point or spot light
-		{
-			fixed3 vertexToLightSource = _WorldSpaceLightPos0.xyz - input.posWorld.xyz;
-			fixed distance = length(vertexToLightSource);
-			lightDirection.w = 1.0 / distance; // linear attenuation 
-			lightDirection.xyz = normalize(vertexToLightSource);
-		}
+		fixed3 vertexToLightSource = _WorldSpaceLightPos0.xyz - input.posWorld.xyz;
+		fixed distance = length(vertexToLightSource);
+		lightDirection.xyz = lerp(normalize(_WorldSpaceLightPos0.xyz), normalize(vertexToLightSource), _WorldSpaceLightPos0.w);
+		lightDirection.w = lerp(1, 1.0 / distance, _WorldSpaceLightPos0.w);
 	#endif
 	
 	return lightDirection;
