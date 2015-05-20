@@ -63,6 +63,10 @@ fixed4 frag(v2f input) : COLOR
 {
 	fixed4 finalColor = (0,0,0,0);
 	fixed4 diffuseColor = tex2D(_basetexture, input.tex);
+#ifdef HUE
+	fixed3 shift = fixed3(_HueShift, _Sat, _Val);  
+	diffuseColor.rgb = low_shift_col(diffuseColor, shift);
+#endif
 	finalColor.a = diffuseColor.a;
 #ifdef ALPHA_CUT
 	if(diffuseColor.a < _AlphaCut)

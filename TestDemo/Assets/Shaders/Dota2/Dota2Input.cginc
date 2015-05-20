@@ -13,15 +13,15 @@ fixed _alpha;
 #endif
 
 #if !(defined(SIMPLE) || defined(LIGHT_PROBES))
-fixed _rimlightscale;
 fixed _rimlightblendtofull;
 
 fixed _selfillumblendtofull;
 
-fixed _specularexponent;
 fixed _specularblendtofull;
-fixed _specularscale;
 #endif
+fixed _rimlightscale;
+fixed _specularexponent;
+fixed _specularscale;
 
 #if defined(HUE)
 fixed _HueShift;

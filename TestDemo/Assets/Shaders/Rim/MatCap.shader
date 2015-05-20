@@ -17,7 +17,6 @@ Shader "kokichi/Mobile/MatCap/Textured"
 		{
 			Tags { "LIGHTMODE"="ForwardBase" "RenderType"="Opaque" }
 			CGPROGRAM
-			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
 			#pragma fragmentoption ARB_precision_hint_fastest

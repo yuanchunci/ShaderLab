@@ -5,7 +5,7 @@
  
 	SubShader {
 		Pass {
-			Name "WALl"
+			Name "WALL"
 			Cull Off
 			ZWrite Off // dont write to z-buff to render xray color only
 			ZTest Greater // further to camera will be render first
@@ -13,16 +13,19 @@
 			Blend SrcAlpha OneMinusSrcAlpha
 
 			CGPROGRAM
-// Upgrade NOTE: excluded shader from OpenGL ES 2.0 because it does not contain a surface program or both vertex and fragment programs.
-#pragma exclude_renderers gles
-			#pragma fragment frag
+	        #pragma vertex vert
+	        #pragma fragment frag
+	        #include "UnityCG.cginc"
+                
 			fixed4	_behindwallColor;
-			struct v2f
-			{
-				fixed4 color: COLOR;
-			}; 
 			
-			fixed4 frag(v2f i) :COLOR {
+			
+			fixed4 vert (appdata_base v) : POSITION
+	        {
+	            return mul(UNITY_MATRIX_MVP, v.vertex);
+	        }
+                
+			fixed4 frag() :COLOR {
 				return fixed4(_behindwallColor);
 			}
 			ENDCG

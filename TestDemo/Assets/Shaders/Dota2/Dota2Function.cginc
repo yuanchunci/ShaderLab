@@ -113,7 +113,7 @@ fixed4 frag(v2f input) : COLOR
 	#endif
 	
 	#if defined(TRANSPARENT)
-		finalColor.a = saturate (_alpha + specular + rimlight);
+		finalColor.a = saturate (_alpha + cSpecular + rimlight);
 	#else
 		finalColor.a = 1;
 	#endif

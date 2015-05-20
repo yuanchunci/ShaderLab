@@ -2,13 +2,10 @@ Shader "kokichi/Hidden/Stencil"
 {
 	Properties
 	{
-		_ShadowColor ("Shadow's Color", Color) = (212,212,212,255)
-//     	_LightDir("Light Direction", Vector) = (9,-148,7)
 	}
 	
 	SubShader
 	{
-		Tags { "Queue" = "AlphaTest+505" }
 		Pass
 		{
 			Name "PLANAR_SHADOW"
@@ -23,7 +20,6 @@ Shader "kokichi/Hidden/Stencil"
 			Lighting Off
 			ZWrite Off
 			Blend Zero One
-			
 			Fog
 			{
 				Mode Off
@@ -37,7 +33,7 @@ Shader "kokichi/Hidden/Stencil"
 	         #include "UnityCG.cginc"
 	 
 	         // User-specified uniforms
-	         uniform fixed4 _ShadowColor;
+	         fixed4 _ShadowColor;
 	         uniform fixed4x4 _World2Receiver; // transformation from 
 												// world coordinates to the coordinate system of the plane
 	         uniform fixed4 _LightDir;
@@ -48,8 +44,6 @@ Shader "kokichi/Hidden/Stencil"
 	            fixed4x4 modelMatrix = _Object2World;
 	            fixed4x4 modelMatrixInverse = _World2Object * unity_Scale.w;
 	            modelMatrixInverse[3][3] = 1.0; 
-	            fixed4x4 viewMatrix = mul(UNITY_MATRIX_MV, modelMatrixInverse);
-	 
 	            fixed4 lightDirection = normalize(_LightDir);
 	            fixed4 vertexInWorldSpace = mul(modelMatrix, vertexPos);
 	            fixed4 world2ReceiverRow1 = fixed4(_World2Receiver[1][0], _World2Receiver[1][1], 

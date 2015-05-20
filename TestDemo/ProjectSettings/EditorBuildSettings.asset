@@ -11,7 +11,7 @@ EditorBuildSettings:
     path: Assets/Scenes/test.unity
   - enabled: 0
     path: Assets/Scenes/TestLightProbe.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Untitled.unity
   - enabled: 0
     path: Assets/Shadow Volumes Toolkit/Examples/Basic/Basic.unity
@@ -25,3 +25,5 @@ EditorBuildSettings:
     path: Assets/MoPho' Games/Mobile Shadow Kit/Example/TestScene.unity
   - enabled: 0
     path: Assets/Scenes/Untitled 1.unity
+  - enabled: 1
+    path: Assets/Scenes/Shadow Stencil.unity

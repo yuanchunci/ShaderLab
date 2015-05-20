@@ -4,7 +4,7 @@ Shader "kokichi/Hidden/Screen/Stencil Interpolate"
 	{
 		Tags
 		{
-			"Queue" = "Transparent+511"
+			"Queue" = "Overlay"
 			"IgnoreProjector" = "True"
 		}
 		

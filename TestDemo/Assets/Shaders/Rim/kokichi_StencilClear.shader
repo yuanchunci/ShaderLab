@@ -22,16 +22,16 @@ Shader "kokichi/Hidden/Screen/Stencil Clear"
 			ZWrite Off
 			Blend Zero One
 			
-//			Fog
-//			{
-//				Mode Off
-//			}
+			Fog
+			{
+				Mode Off
+			}
 			
-//			CGPROGRAM
-//			#pragma vertex vert
-//			#pragma fragment frag
-//			#include "kokichi_StencilScreen.cginc"
-//			ENDCG
+			CGPROGRAM
+			#pragma vertex vert
+			#pragma fragment frag
+			#include "kokichi_StencilScreen.cginc"
+			ENDCG
 		}
 	}
 }

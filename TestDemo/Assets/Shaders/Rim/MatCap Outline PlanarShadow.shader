@@ -17,7 +17,7 @@ Shader "kokichi/Mobile/MatCap/Textured Outline PlanarShadow"
 		Tags {"QUEUE"="Geometry" }
 		Pass
 		{
-			Tags { "LIGHTMODE"="ForwardBase" "RenderType"="Opaque" }
+			Tags { "LIGHTMODE"="ForwardBase"}
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag

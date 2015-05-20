@@ -5,7 +5,7 @@
   }
  
   SubShader {
-    Tags { "RenderQueue" = "Geometry-1" }
+    Tags { "Queue" = "Geometry" }
  
     Pass {
       // Disable lighting, we're only using the lightmap
@@ -15,10 +15,9 @@
 	  		Ref 1
 			Comp Always
 			Pass Replace
-			Fail Keep
-			ZFail Keep
+			Fail Zero
+			ZFail Zero
 	  }
- 
       CGPROGRAM
       // Must be a vert/frag shader, not a surface shader: the necessary variables
       // won't be defined yet for surface shaders.

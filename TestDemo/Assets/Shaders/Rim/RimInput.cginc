@@ -23,6 +23,12 @@ fixed4 _LightColor0;
 #ifdef ALPHA_CUT
 fixed _AlphaCut;
 #endif
+
+#ifdef HUE
+fixed _HueShift;
+fixed _Sat;
+fixed _Val;
+#endif
 struct app_data
 {
 	fixed4 vertex : POSITION;

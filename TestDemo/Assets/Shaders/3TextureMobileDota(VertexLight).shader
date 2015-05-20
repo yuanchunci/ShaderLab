@@ -5,10 +5,11 @@
       _Shininess ("Shininess", Float) = 10
    }
    SubShader {
+   Tags { "Queue" = "Geometry"} 
       Pass {	
          Tags { "LightMode" = "ForwardBase" } 
             // pass for ambient light and first light source
- 
+		
          CGPROGRAM
  
          #pragma vertex vert  

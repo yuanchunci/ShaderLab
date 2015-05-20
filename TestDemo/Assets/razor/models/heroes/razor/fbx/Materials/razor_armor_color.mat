@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: razor_armor_color
-  m_Shader: {fileID: 4800000, guid: bd9a930ccd81841f9a9ed2fa24f75931, type: 3}
+  m_Shader: {fileID: 4800000, guid: 9d0c7301091b949c0be01f99c0953cbe, type: 3}
   m_ShaderKeywords:
   - _GAMMA_SPACE
   - _DETAIL1BLENDMODE_OFF
@@ -59,6 +59,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _Ramp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _fresnelwarp
         second:
           m_Texture: {fileID: 0}
@@ -80,7 +87,7 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _specularwarp
+          name: __maskmap2
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -88,6 +95,13 @@ Material:
       data:
         first:
           name: _diffusewarp
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _specularwarp
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -108,26 +122,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: __maskmap2
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Ramp
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
+      data:
+        first:
+          name: _Shininess
+        second: 1
       data:
         first:
           name: _ambientscale
@@ -156,6 +160,30 @@ Material:
         first:
           name: _selfillumblendtofull
         second: 0
+      data:
+        first:
+          name: _alpha
+        second: 1
+      data:
+        first:
+          name: _RimMin
+        second: .400000006
+      data:
+        first:
+          name: _RimMax
+        second: .600000024
+      data:
+        first:
+          name: _HueShift
+        second: 359
+      data:
+        first:
+          name: _Sat
+        second: 0
+      data:
+        first:
+          name: _Val
+        second: 1
       data:
         first:
           name: _fresnelwarpblendtonone
@@ -194,15 +222,7 @@ Material:
         second: 0
       data:
         first:
-          name: _colorwarpblendtonone
-        second: 0
-      data:
-        first:
           name: _diffusewarpblendtofull
-        second: 0
-      data:
-        first:
-          name: _fresnelcolorwarpblendtonone
         second: 0
       data:
         first:
@@ -210,36 +230,16 @@ Material:
         second: 0
       data:
         first:
-          name: _Shininess
-        second: 1
+          name: _fresnelcolorwarpblendtonone
+        second: 0
       data:
         first:
-          name: _alpha
-        second: 1
-      data:
-        first:
-          name: _HueShift
-        second: 359
-      data:
-        first:
-          name: _Sat
-        second: 1
-      data:
-        first:
-          name: _Val
-        second: 1
+          name: _colorwarpblendtonone
+        second: 0
       data:
         first:
           name: _cutoff
         second: 0
-      data:
-        first:
-          name: _RimMin
-        second: .400000006
-      data:
-        first:
-          name: _RimMax
-        second: .600000024
       data:
         first:
           name: _Parallax
@@ -255,15 +255,15 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
+          name: _SpecColor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
           name: _rimlightcolor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _specularcolor
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _SpecColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:

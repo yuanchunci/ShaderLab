@@ -3,6 +3,7 @@
       _Color ("Diffuse Material Color", Color) = (1,1,1,1) 
    }
    SubShader {
+   		Tags { "Queue"= "Geometry"}
       Pass {	
          Tags { "LightMode" = "ForwardBase" } 
             // make sure that all uniforms are correctly set

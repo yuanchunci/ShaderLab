@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: diffuse
-  m_Shader: {fileID: 10703, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 4e7c3a6709bd540ab91e92003c24073b, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -18,13 +18,6 @@ Material:
           name: _MainTex
         second:
           m_Texture: {fileID: 2800000, guid: ffd66f5a3419f41fbacdd85aad64fd84, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _lavaEmissiveMaskTexture
-        second:
-          m_Texture: {fileID: 2800000, guid: 04119b4b81f7d49b89a2106ef4fbd3eb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -83,6 +76,13 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _lavaEmissiveMaskTexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 04119b4b81f7d49b89a2106ef4fbd3eb, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -92,34 +92,6 @@ Material:
         first:
           name: _OutlineDiffusion
         second: 1
-      data:
-        first:
-          name: _Scale
-        second: 1
-      data:
-        first:
-          name: addMixVal
-        second: 1.42857146
-      data:
-        first:
-          name: offsetX
-        second: .357142866
-      data:
-        first:
-          name: offsetY
-        second: .821428597
-      data:
-        first:
-          name: SineSpeed
-        second: .722571433
-      data:
-        first:
-          name: WaveSinSpeed
-        second: 2
-      data:
-        first:
-          name: LavaSinWaveFactor
-        second: 7.67857122
       data:
         first:
           name: _AlphaCut
@@ -160,6 +132,34 @@ Material:
         first:
           name: _FrenselPower
         second: 2.5
+      data:
+        first:
+          name: _Scale
+        second: 1
+      data:
+        first:
+          name: addMixVal
+        second: 1.42857146
+      data:
+        first:
+          name: offsetX
+        second: .357142866
+      data:
+        first:
+          name: offsetY
+        second: .821428597
+      data:
+        first:
+          name: SineSpeed
+        second: .722571433
+      data:
+        first:
+          name: WaveSinSpeed
+        second: 2
+      data:
+        first:
+          name: LavaSinWaveFactor
+        second: 7.67857122
       data:
         first:
           name: _alphaFrenselPower
@@ -203,14 +203,6 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: offsetVectorXY
-        second: {r: 5, g: 0, b: 0, a: 0}
-      data:
-        first:
-          name: deformSinVert
-        second: {r: 0, g: 1, b: 0, a: 0}
-      data:
-        first:
           name: _diffuseColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
@@ -233,3 +225,11 @@ Material:
         first:
           name: _rimColor
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: offsetVectorXY
+        second: {r: 5, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: deformSinVert
+        second: {r: 0, g: 1, b: 0, a: 0}

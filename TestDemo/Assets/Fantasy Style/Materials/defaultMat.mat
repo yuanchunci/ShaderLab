@@ -207,15 +207,15 @@ Material:
       data:
         first:
           name: _Outline
-        second: .00714285672
+        second: .0187500007
       data:
         first:
           name: _ambientscale
-        second: 1
+        second: 0
       data:
         first:
           name: _diffusescale
-        second: 1
+        second: 0
       data:
         first:
           name: _mulscale
@@ -223,7 +223,7 @@ Material:
       data:
         first:
           name: _addscale
-        second: 2
+        second: 3
       data:
         first:
           name: _OutlineDiffusion
@@ -383,16 +383,16 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
-      data:
-        first:
           name: _OutlineColor
         second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
           name: _ShadowColor
         second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
       data:
         first:
           name: _rimlightcolor
