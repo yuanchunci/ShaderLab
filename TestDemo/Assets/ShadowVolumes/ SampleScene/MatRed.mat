@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MatRed
-  m_Shader: {fileID: 4800000, guid: f8970fbeaadc74736bce24629ba7a934, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0abac1fd5a5ae4f458a75de9e781d8ce, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -34,6 +34,20 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _normalmap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _maskmap2
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -42,7 +56,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: 55.8400002
+        second: 22
       data:
         first:
           name: _Outline
@@ -65,13 +79,37 @@ Material:
         second: .800000012
       data:
         first:
+          name: _rimlightscale
+        second: 1
+      data:
+        first:
+          name: _rimlightblendtofull
+        second: 0
+      data:
+        first:
+          name: _specularexponent
+        second: 1
+      data:
+        first:
+          name: _specularscale
+        second: 1
+      data:
+        first:
+          name: _specularblendtofull
+        second: 0
+      data:
+        first:
+          name: _selfillumblendtofull
+        second: 0
+      data:
+        first:
           name: _alpha
         second: 1
     m_Colors:
       data:
         first:
           name: _Color
-        second: {r: 1, g: .714686811, b: .677653134, a: 1}
+        second: {r: .786764741, g: .416522503, b: .416522503, a: 1}
       data:
         first:
           name: _MainTex_ST
@@ -79,15 +117,27 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: .852941155, g: .188148767, b: .724567235, a: 1}
       data:
         first:
           name: _OutlineColor
         second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
       data:
         first:
+          name: _rimlightcolor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _specularcolor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
           name: _ScrollSpeed
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: SpecColor
+        second: {r: 1, g: .213235319, b: .213235319, a: 1}
 --- !u!1002 &2100001
 EditorExtensionImpl:
   serializedVersion: 6

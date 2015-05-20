@@ -43,8 +43,8 @@ Shader "kokichi/Hidden/Stencil"
 	         {
 	            fixed4x4 modelMatrix = _Object2World;
 	            fixed4x4 modelMatrixInverse = _World2Object * unity_Scale.w;
-	            modelMatrixInverse[3][3] = 1.0; 
-	            fixed4 lightDirection = normalize(_LightDir);
+	            fixed4 lightDirection;
+	            lightDirection = lerp(normalize(_LightDir), normalize(mul(modelMatrix, vertexPos) - _LightDir), _LightDir.w);
 	            fixed4 vertexInWorldSpace = mul(modelMatrix, vertexPos);
 	            fixed4 world2ReceiverRow1 = fixed4(_World2Receiver[1][0], _World2Receiver[1][1], 
 	               									_World2Receiver[1][2], _World2Receiver[1][3]);
