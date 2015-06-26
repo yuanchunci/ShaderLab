@@ -61,14 +61,12 @@ public static class SkinnedMeshTools
 			GameObject newObject = new GameObject( slotName );	
 			SkinnedMeshRenderer NewRenderer = newObject.AddComponent( typeof( SkinnedMeshRenderer ) ) as SkinnedMeshRenderer;
 			// Assemble Bone Structure	
-			Transform[] MyBones = new Transform[ skinnedMesh.bones.Length ];
 			Debug.Log("bones " + skinnedMesh.bones.Length);
-			// As clips are using bones by their names, we find them that way.
-			for( int i = 0; i < skinnedMesh.bones.Length; i++ )
-				MyBones[ i ] = FindChildByName( skinnedMesh.bones[ i ].name, root );
+
 			NewRenderer.bones = skinnedMesh.bones;	
 			NewRenderer.sharedMesh = skinnedMesh.sharedMesh;	
 			NewRenderer.materials = skinnedMesh.materials;
+			NewRenderer.rootBone = skinnedMesh.rootBone;
 			newObject.transform.parent = root;
 			GameObject.Destroy(target.gameObject);
 			obj.SetActiveRecursively(false);

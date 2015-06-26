@@ -30,7 +30,7 @@ public class ChangeClothes : MonoBehaviour {
 				}
 				GameObject.Destroy(target.gameObject);
 			}
-//			SkinnedMeshTools.ChangeCloth(slot, item, root);
+			SkinnedMeshTools.ChangeCloth(slot, item, root);
 		}
 	}
 }

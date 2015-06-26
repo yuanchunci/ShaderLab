@@ -24,7 +24,7 @@ Shader "MatCap/Vertex/Textured Add"
 				
 				struct v2f
 				{
-					float4 pos	: POSITION;
+					float4 pos	: SV_POSITION;
 					float2 uv 	: TEXCOORD0;
 					float2 cap	: TEXCOORD1;
 				};
@@ -53,7 +53,7 @@ Shader "MatCap/Vertex/Textured Add"
 					fixed4 tex = tex2D(_MainTex, i.uv);
 					fixed4 mc = tex2D(_MatCap, i.cap);
 					
-					return (tex + (mc*2.0)-0.75);
+					return (tex + (mc*2.0)-1.0);
 				}
 			ENDCG
 		}

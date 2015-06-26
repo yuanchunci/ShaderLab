@@ -15,7 +15,7 @@ Shader "Crazy Nitroxen/Mobile/Substance Mobile/MatCap_Diffuse_Rim(unlit)"
 		_MatCapBlendFactor ("MatCap Blend Factor" , float) =1
 		_MatRim ("RimTex (RGB)", 2D) = "black" {}
 		_RimPower ("RimPower", float) = 1
-		
+		_RimColor("Rim Color", Color) = (0,0,0,0)
 		
 		
 	}
@@ -41,6 +41,7 @@ Shader "Crazy Nitroxen/Mobile/Substance Mobile/MatCap_Diffuse_Rim(unlit)"
 				};
 				
 				uniform float4 _MainTex_ST;
+				uniform float4 _RimColor;
 				
 				v2f vert (appdata_base v)
 				{
@@ -68,7 +69,7 @@ Shader "Crazy Nitroxen/Mobile/Substance Mobile/MatCap_Diffuse_Rim(unlit)"
 					fixed4 tex = tex2D(_MainTex, i.uv);
 					fixed4 mc = tex2D(_MatCap, i.cap) * _MatCapBlendFactor;
 					fixed4 mcRim = tex2D(_MatRim, i.cap);
-					fixed4 finalcolor = tex * mc * 2.0 + (mcRim * _RimPower);
+					fixed4 finalcolor = tex * mc * 2.0 + (mcRim * _RimPower * _RimColor);
 					return finalcolor;
 				}
 			ENDCG

@@ -16,8 +16,12 @@ fixed _addscale;
 #endif
 #ifdef RIM_LIGHT
 fixed	_rimlightscale;
-fixed	_rimlightpower;
 fixed3	_rimlightcolor;
+	#ifndef MAT_CAP
+		fixed	_rimlightpower;
+	#else
+		sampler2D _rimTex;
+	#endif
 #endif
 fixed4 _LightColor0;
 #ifdef ALPHA_CUT
@@ -41,7 +45,7 @@ struct v2f
 	fixed4 pos : SV_POSITION;
 	fixed2 tex : TEXCOORD0;
 	fixed3 diffuse : TEXCOORD1;
-#ifdef RIM_LIGHT
+#if defined(RIM_LIGHT) && !defined(MAT_CAP)
 	fixed3 rim : TEXCOORD2;
 #endif
 #if defined(MAT_CAP) || defined(TOON_RAMP)

@@ -48,11 +48,13 @@ v2f vert(app_data input)
 	output.pos = mul(UNITY_MATRIX_MVP, input.vertex);
 	output.diffuse = diffuseReflection;
 #ifdef RIM_LIGHT
-	fixed rim = 1.0f - saturate( dot(normalize(ObjSpaceViewDir(input.vertex)), input.normal) );
-	fixed3 rimlight = (_rimlightcolor.rgb * pow(rim, _rimlightpower));
-	if (0.0 != _WorldSpaceLightPos0.w)
-	{ rimlight *= attenuation; }
-	output.rim = rimlight * _rimlightscale;
+	#ifndef MAT_CAP
+		fixed rim = 1.0f - saturate( dot(normalize(ObjSpaceViewDir(input.vertex)), input.normal) );
+		fixed3 rimlight = (_rimlightcolor.rgb * pow(rim, _rimlightpower));
+		if (0.0 != _WorldSpaceLightPos0.w)
+		{ rimlight *= attenuation; }
+		output.rim = rimlight * _rimlightscale;
+	#endif
 #endif
 
 	
@@ -82,9 +84,13 @@ fixed4 frag(v2f input) : COLOR
 #endif
 	finalColor.rgb = diffuseColor.rgb * input.diffuse;
 #ifdef RIM_LIGHT
-	fixed3 rimlight = input.rim;
-	#if defined(RIM_MASK) && !defined(ALPHA_CUT)
-		rimlight *= diffuseColor.a;
+	#ifndef MAT_CAP
+		fixed3 rimlight = input.rim;
+		#if defined(RIM_MASK) && !defined(ALPHA_CUT)
+			rimlight *= diffuseColor.a;
+		#endif
+	#else
+		fixed3 rimlight = tex2D(_rimTex, input.cap.xy) * _rimlightcolor * _rimlightscale;
 	#endif
 	finalColor.rgb += rimlight;
 #endif

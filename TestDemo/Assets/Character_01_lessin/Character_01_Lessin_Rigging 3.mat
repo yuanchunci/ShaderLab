@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Character_01_Lessin_Rigging 3
-  m_Shader: {fileID: 4800000, guid: ab7b6567cd38b494181ef6bbb1059800, type: 3}
+  m_Shader: {fileID: 4800000, guid: 0380f292843be469fac4edb1037e8be2, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -50,6 +50,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _rimTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 6024c4641db2c461d8df424a2df1d2c0, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _DiffuseTexture
         second:
           m_Texture: {fileID: 2800000, guid: 81c423edeee9d4e358a434eb5d7a7c9c, type: 3}
@@ -85,8 +92,16 @@ Material:
         second: 3
       data:
         first:
+          name: _rimlightscale
+        second: 1
+      data:
+        first:
           name: _RimPower
-        second: 2
+        second: 1
+      data:
+        first:
+          name: _rimlightpower
+        second: 8.60000038
       data:
         first:
           name: _MatCapBlendFactor
@@ -110,8 +125,12 @@ Material:
         second: {r: 0, g: 0, b: 0, a: 1}
       data:
         first:
+          name: _rimlightcolor
+        second: {r: 1, g: .68275857, b: 0, a: 1}
+      data:
+        first:
           name: _RimColor
-        second: {r: 1, g: .972413778, b: 0, a: 0}
+        second: {r: 1, g: 1, b: 1, a: 0}
       data:
         first:
           name: _ScrollSpeed

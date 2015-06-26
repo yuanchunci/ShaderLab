@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: defaultMat
-  m_Shader: {fileID: 4800000, guid: 02e1e9c264b1f4a3f96e027c7d4cb176, type: 3}
+  m_Shader: {fileID: 4800000, guid: c6e4748c1376f4d959537555b0f5fa0e, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -193,6 +193,13 @@ Material:
           name: _Ramp2D
         second:
           m_Texture: {fileID: 2800000, guid: f2dadaf5c18c7460ba8665e518dca82c, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _rimTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 1bcd003609627e945a1c0942697a9ce3, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -396,7 +403,7 @@ Material:
       data:
         first:
           name: _rimlightcolor
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 1, g: .972413778, b: 0, a: 0}
       data:
         first:
           name: _specularcolor

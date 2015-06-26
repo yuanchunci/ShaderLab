@@ -7,7 +7,6 @@
       Pass {	
          Tags { "LightMode" = "ForwardBase" } 
            // pass for first light source
- 
          CGPROGRAM
  
          #pragma vertex vert  

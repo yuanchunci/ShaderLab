@@ -1,6 +1,6 @@
-MatCap Shaders Pack, version 1.32
-2014/07/07
-(c) 2013,2014 Jean Moreno
+MatCap Shaders Pack, version 1.33
+2015/03/05
+(c) 2015 - Jean Moreno
 =================================
 
 This is a pack of MatCap-like shaders, used in popular 3d software such as ZBrush or Sculptris.
@@ -22,6 +22,9 @@ http://jeanmoreno.com/unity
 
 Release notes:
 --------------
+v1.33
+- updated "JMO Assets" menu
+
 v1.32
 - fixed compilation errors and warnings in d3d11
 
