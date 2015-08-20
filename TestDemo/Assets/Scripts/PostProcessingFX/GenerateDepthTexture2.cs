@@ -30,7 +30,7 @@ public class GenerateDepthTexture2 : MonoBehaviour {
 		
 		depthCamera.clearFlags = CameraClearFlags.SolidColor;
 		depthCamera.backgroundColor = Color.white;
-		depthTexture = new RenderTexture(TextureSize,TextureSize, 16, RenderTextureFormat.ARGB32);
+		depthTexture = new RenderTexture(TextureSize,TextureSize, 8, RenderTextureFormat.ARGB32);
 		depthTexture.filterMode = FilterMode.Point;
 		depthCamera.targetTexture = depthTexture;
 		depthCamera.SetReplacementShader(shader, null);

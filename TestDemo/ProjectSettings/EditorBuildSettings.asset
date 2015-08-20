@@ -18,12 +18,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Shadow.unity
   - enabled: 0
-    path: Assets/Scenes/PostProcessingFX.unity
+    path: Assets/Scenes/PostprocessingFX/MotionBlur.unity
   - enabled: 0
     path: Assets/Scenes/Shadowmap.unity
   - enabled: 0
     path: Assets/MoPho' Games/Mobile Shadow Kit/Example/TestScene.unity
   - enabled: 0
     path: Assets/Scenes/Untitled 1.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Shadow Stencil.unity
+  - enabled: 0
+    path: Assets/Scenes/FogMobile.unity
+  - enabled: 1
+    path: Assets/Scenes/CutoutTest.unity

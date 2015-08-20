@@ -40,8 +40,8 @@
 		v2f vert(app_data input) 
 		{
 			v2f output;
-			fixed4 amount = _Vec * input.color.r;
-			amount = lerp(amount, amount * sin(_Frequency * _Time.z) * input.vertex.y, _VecAmount);
+			fixed4 amount = _Vec * input.color.r * abs(input.vertex.y);
+			amount = lerp(amount, amount * sin(_Frequency * _Time.z) , _VecAmount);
 			output.pos = mul(UNITY_MATRIX_MVP, input.vertex + amount);
 			output.uv = TRANSFORM_TEX(input.texcoord, _MainTex);
 			return output;

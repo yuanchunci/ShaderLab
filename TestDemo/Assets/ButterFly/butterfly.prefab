@@ -1,16 +1,16 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &168556
+--- !u!1 &165264
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 468556}
-  - 33: {fileID: 3368556}
-  - 23: {fileID: 2368556}
-  - 111: {fileID: 11168556}
+  - 4: {fileID: 465264}
+  - 33: {fileID: 3365264}
+  - 23: {fileID: 2365264}
+  - 111: {fileID: 11165264}
   m_Layer: 0
   m_Name: butterfly
   m_TagString: Untagged
@@ -18,24 +18,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &468556
+--- !u!4 &465264
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168556}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.07099998, y: 0, z: 0}
+  m_GameObject: {fileID: 165264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2368556
+--- !u!23 &2365264
 Renderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168556}
+  m_GameObject: {fileID: 165264}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -50,19 +50,19 @@ Renderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &3368556
+--- !u!33 &3365264
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168556}
+  m_GameObject: {fileID: 165264}
   m_Mesh: {fileID: 4300000, guid: dc034b9c865604277a7560a649db6fa9, type: 3}
---- !u!111 &11168556
+--- !u!111 &11165264
 Animation:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 168556}
+  m_GameObject: {fileID: 165264}
   m_Enabled: 1
   serializedVersion: 3
   m_Animation: {fileID: 0}
@@ -80,6 +80,6 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 168556}
+  m_RootGameObject: {fileID: 165264}
   m_IsPrefabParent: 1
   m_IsExploded: 1

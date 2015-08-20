@@ -113,11 +113,11 @@ Material:
       data:
         first:
           name: _HueShift
-        second: 0
+        second: 359
       data:
         first:
           name: _Sat
-        second: 0
+        second: 1
       data:
         first:
           name: _Val

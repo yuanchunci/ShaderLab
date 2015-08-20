@@ -88,13 +88,14 @@ SubShader {
 			float2 uv = (In.texCoord - 0.5f) * uvScaleTranslate.xy + uvScaleTranslate.zw + (_Time * SineSpeed * offsetVectorXY )  + 0.5f;
 			 
 			colorMap = tex2D(_MainTex , uv);
-//			emmiveMaskMap = tex2D(_lavaEmissiveMaskTexture , uv);
+			emmiveMaskMap = tex2D(_lavaEmissiveMaskTexture , uv);
 			addColor = _Color;
 //			 
 //			 
 //			variationMixedColor = variationMixedColor + (cos(sin((_Time/4.0f) *  addMixVal)));
 //			 
-			outColor.rgb = ( colorMap.rgb * addColor.rgb ) * 1;// * (emmiveMaskMap.rgb + variationMixedColor);
+			outColor.rgb += ( colorMap.rgb * addColor.rgb ) * emmiveMaskMap.rgb;
+//			outColor.rgb = colorMap.rgb;
 			outColor.a = 1.0f;
 			 
 			return outColor;

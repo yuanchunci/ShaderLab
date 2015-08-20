@@ -1,17 +1,17 @@
-﻿Shader "Custom/Diffuse Lightmap" {
+﻿Shader "Custom/Transparent Cutout Lightmap" {
  
   Properties {
     _basetexture ("Texture 1", 2D) = "white" {}
     _color("Color", Color) = (1,1,1,1)
+    _alphaCut("Cut", float) = 0.5
   }
  
   SubShader {
-    Tags { "RenderType" = "Opaque" }
+    Tags {  "Queue" = "AlphaTest" }
  
     Pass {
       // Disable lighting, we're only using the lightmap
       Lighting Off
- 
       CGPROGRAM
       // Must be a vert/frag shader, not a surface shader: the necessary variables
       // won't be defined yet for surface shaders.
@@ -35,6 +35,8 @@
       // These are prepopulated by Unity
       sampler2D unity_Lightmap;
       float4 unity_LightmapST;
+      float4 _color;
+      float _alphaCut;
  
       sampler2D _basetexture;
       float4 _basetexture_ST; // Define this since its expected by TRANSFORM_TEX; it is also pre-populated by Unity.
@@ -53,7 +55,7 @@
       }
  
       half4 frag(v2f i) : COLOR {
-        half4 main_color = tex2D(_basetexture, i.uv0);
+        half4 main_color = tex2D(_basetexture, i.uv0) * _color;
  
         // Decodes lightmaps:
         // - doubleLDR encoded on GLES
@@ -67,6 +69,7 @@
         // }
  
         main_color.rgb *= DecodeLightmap(tex2D(unity_Lightmap, i.uv1));
+        clip(main_color.a - _alphaCut);
         return main_color;
       }
       ENDCG

@@ -1,6 +1,7 @@
 ﻿Shader "Custom/3DiffuseAlpha" {
 	Properties {
 		_basetexture("Diffuse (RGB) Self-Illumination (A)", 2D)	= "white" {}
+		
 		_alpha ("Alpha ", Range(0,1)) = 1
 	}
 	SubShader {

@@ -10,8 +10,8 @@
 		  CGPROGRAM
 
 
-		  #pragma vertex vert
-		  #pragma fragment frag
+		  #pragma vertex vert0
+		  #pragma fragment frag0
 		  #pragma target 3.0
 		  #include "UnityCG.cginc"
 		  
@@ -27,7 +27,7 @@
 			   float4 position : SV_POSITION;
 			   float2 uv : TEXCOORD0;
 			   float4 shadowCoord : TEXCOORD1;
-			   float depth : TEXCOORD2;
+			   float4 depth : TEXCOORD2;
 		  };
 		  
 		  v2f vert(appdata_base v )
@@ -45,6 +45,26 @@
 		  {
 //		  		half depth = DecodeFloatRGBA(tex2D(_kkShadowMap, IN.shadowCoord.xy));
 		  		half depth = (tex2D(_kkShadowMap, IN.shadowCoord.xy));
+		  		fixed shade =  max(step(IN.depth - _bias, depth), _strength);
+		  	    return shade * tex2D(_MainTex, IN.uv) * _Color;
+		  }
+		  
+		  v2f vert0(appdata_base v )
+		  {
+			   v2f o;
+			   o.position = mul(UNITY_MATRIX_MVP, v.vertex);
+			   o.shadowCoord = mul(_depthVP, mul(_Object2World, v.vertex));
+//			   o.depth = (o.shadowCoord.z / o.shadowCoord.w);
+			   o.depth = EncodeFloatRGBA(o.shadowCoord.z / o.shadowCoord.w);
+			   o.shadowCoord = mul(_biasMatrix, o.shadowCoord);
+			   o.uv = v.texcoord;
+			   return o;
+		  }
+	
+		  half4 frag0(v2f IN) : COLOR
+		  {
+//		  		half depth = DecodeFloatRGBA(tex2D(_kkShadowMap, IN.shadowCoord.xy));
+		  		half4 depth = (tex2D(_kkShadowMap, IN.shadowCoord.xy));
 		  		fixed shade =  max(step(IN.depth - _bias, depth), _strength);
 		  	    return shade * tex2D(_MainTex, IN.uv) * _Color;
 		  }

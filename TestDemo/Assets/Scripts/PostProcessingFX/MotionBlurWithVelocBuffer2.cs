@@ -8,6 +8,8 @@ public class MotionBlurWithVelocBuffer2 : BasePostProcessingFX {
 	public float extraMask;
 	public Shader writeVelocityShader;
 	public LayerMask MotionBlurLayers = ~0;
+	public int renderTextureScale = 16;
+	private bool isRun = true;
 	private Camera motionVectorCamera;
 	private RenderTexture velocityTex;
 	private RenderTexture rt;
@@ -15,6 +17,15 @@ public class MotionBlurWithVelocBuffer2 : BasePostProcessingFX {
 	void Awake () {
 		motionVectorCamera = new GameObject("MotionVectorCamera").AddComponent<Camera>();
 		motionVectorCamera.enabled = false;
+	}
+
+	void OnGUI()
+	{
+		if(GUI.Button(new Rect(0,0,50,50), "Motion " + isRun))
+		{
+			isRun = !isRun;
+
+		}
 	}
 	
 	void OnDisable()
@@ -41,9 +52,10 @@ public class MotionBlurWithVelocBuffer2 : BasePostProcessingFX {
 	}
 
 	void OnPreRender() {
+		if(!isRun) return;
 		CleanUpTexture();
-		velocityTex = RenderTexture.GetTemporary((int)camera.pixelWidth/2,
-		                                         (int)camera.pixelHeight/2, 0, RenderTextureFormat.R8);
+		velocityTex = RenderTexture.GetTemporary((int)camera.pixelWidth/renderTextureScale,
+		                                         (int)camera.pixelHeight/renderTextureScale, 0, RenderTextureFormat.R8);
 		Shader.SetGlobalFloat("_extraMask",extraMask);
 		motionVectorCamera.CopyFrom(camera);
 		motionVectorCamera.backgroundColor = Color.black;

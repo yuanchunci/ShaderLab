@@ -1,4 +1,4 @@
-﻿Shader "Custom/Diffuse Lightmap" {
+﻿Shader "Custom/Transparent Lightmap" {
  
   Properties {
     _basetexture ("Texture 1", 2D) = "white" {}
@@ -6,12 +6,12 @@
   }
  
   SubShader {
-    Tags { "RenderType" = "Opaque" }
+    Tags {  "Queue" = "Transparent" }
  
     Pass {
       // Disable lighting, we're only using the lightmap
       Lighting Off
- 
+ 	  Blend SrcAlpha OneMinusSrcAlpha
       CGPROGRAM
       // Must be a vert/frag shader, not a surface shader: the necessary variables
       // won't be defined yet for surface shaders.
@@ -35,6 +35,7 @@
       // These are prepopulated by Unity
       sampler2D unity_Lightmap;
       float4 unity_LightmapST;
+      float4 _color;
  
       sampler2D _basetexture;
       float4 _basetexture_ST; // Define this since its expected by TRANSFORM_TEX; it is also pre-populated by Unity.
@@ -53,7 +54,7 @@
       }
  
       half4 frag(v2f i) : COLOR {
-        half4 main_color = tex2D(_basetexture, i.uv0);
+        half4 main_color = tex2D(_basetexture, i.uv0) * _color;
  
         // Decodes lightmaps:
         // - doubleLDR encoded on GLES

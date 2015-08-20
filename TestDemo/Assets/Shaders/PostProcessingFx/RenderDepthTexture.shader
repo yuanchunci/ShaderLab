@@ -6,8 +6,8 @@
 	  
 	  Pass {
 		  CGPROGRAM
-		  #pragma vertex vert
-		  #pragma fragment frag
+		  #pragma vertex vert0
+		  #pragma fragment frag0
 		  #include "UnityCG.cginc"
 		  
 		  
@@ -31,9 +31,21 @@
 		  	   return (IN.depth );
 //		  	   return fixed4( (EncodeFloatRGBA(IN.depth.r)));
 		  }
-//		  
-//		  
-//		  
+
+	  
+	  	 v2f vert0(appdata_base v )
+		  {
+			   v2f o;
+			   o.position = mul(UNITY_MATRIX_MVP, v.vertex);
+			   float depth = o.position.z / o.position.w;
+			   o.depth = (EncodeFloatRGBA(depth));
+			   return o;
+		  }
+		  
+		  fixed4 frag0(v2f IN) : COLOR
+		  {
+		  	   return (IN.depth );
+		  }	  
 		 
 	  
 	  ENDCG
