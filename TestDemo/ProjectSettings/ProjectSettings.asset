@@ -267,8 +267,10 @@ PlayerSettings:
   wp8UnprocessedPlugins: []
   intPropertyNames:
   - iOS::Architecture
+  - iOS::EnableIncrementalBuildSupportForIl2cpp
   - iOS::ScriptingBackend
   iOS::Architecture: 0
+  iOS::EnableIncrementalBuildSupportForIl2cpp: 0
   iOS::ScriptingBackend: 0
   firstStreamedLevelWithResources: 0
   unityRebuildLibraryVersion: 9

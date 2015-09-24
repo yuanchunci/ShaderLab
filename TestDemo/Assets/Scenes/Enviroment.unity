@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &181169491
 GameObject:
@@ -82,7 +83,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 181169493}
-  - 95: {fileID: 181169492}
+  - 111: {fileID: 181169492}
   m_Layer: 0
   m_Name: river
   m_TagString: Untagged
@@ -90,22 +91,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!95 &181169492
-Animator:
-  serializedVersion: 3
+--- !u!111 &181169492
+Animation:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 4c4e3d41a79254d7ea2538b3882b549f,
+  m_PrefabParentObject: {fileID: 11100000, guid: 4c4e3d41a79254d7ea2538b3882b549f,
     type: 3}
   m_PrefabInternal: {fileID: 1016643244}
   m_GameObject: {fileID: 181169491}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 4c4e3d41a79254d7ea2538b3882b549f, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!4 &181169493
 Transform:
   m_ObjectHideFlags: 0

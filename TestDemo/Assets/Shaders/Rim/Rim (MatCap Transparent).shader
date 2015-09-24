@@ -2,15 +2,15 @@ Shader "kokichi/Mobile/Rim/MatCap/Textured Transparent"
 {
 	Properties
 	{
-		_basetexture ("Base (RGB) Cutoff(A)", 2D) = "white" {}
+		_basetexture ("Base (RGB)", 2D) = "white" {}
 		_matcap ("MatCap (RGB)", 2D) = "white" {}
+		_rimTex ("Rim Tex (RGB)", 2D) = "black" {}
 		_ambientscale("Ambient Scale", Float) = 1.0
 		_diffusescale("Diffuse Scale", Float) = 1.0
 		_mulscale("Multiple Scale", Float) = 0.8
 		_addscale("Add Scale", Float) = 0.8
 		_rimlightcolor ("Rim Light Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_rimlightscale ("Rim Light Scale", Float) = 1.0
-		_rimlightpower ("Rim Light Power", Float) = 0.2
 	}
 	
 	Subshader

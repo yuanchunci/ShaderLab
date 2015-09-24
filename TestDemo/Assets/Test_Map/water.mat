@@ -17,7 +17,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: d0bbee5a7d99543f18a0176ab6e286f4, type: 3}
+          m_Texture: {fileID: 2800000, guid: 4d75b327833ec43d3aa3fceb23896fe8, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -87,7 +87,7 @@ Material:
         first:
           name: _lavaEmissiveMaskTexture
         second:
-          m_Texture: {fileID: 2800000, guid: ebd80e0833ff247daa647d4e2729086c, type: 3}
+          m_Texture: {fileID: 2800000, guid: 405c95f621e3e4d79876c63579681665, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -146,7 +146,7 @@ Material:
       data:
         first:
           name: addMixVal
-        second: 2
+        second: 1.91071427
       data:
         first:
           name: offsetX
@@ -162,11 +162,11 @@ Material:
       data:
         first:
           name: WaveSinSpeed
-        second: 0
+        second: 1.21428573
       data:
         first:
           name: LavaSinWaveFactor
-        second: 0
+        second: 5
       data:
         first:
           name: _alphaFrenselPower
@@ -231,7 +231,7 @@ Material:
       data:
         first:
           name: offsetVectorXY
-        second: {r: 2, g: 0, b: 0, a: 0}
+        second: {r: .200000003, g: 0, b: 0, a: 0}
       data:
         first:
           name: deformSinVert

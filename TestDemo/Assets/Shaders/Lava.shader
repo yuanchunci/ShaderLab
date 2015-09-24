@@ -64,6 +64,7 @@ SubShader {
 			float4 mixed_deformationVertPos = (deformamtionVertPos + deformationVertPosVertical); 
 			 
 			Out.position = mul(UNITY_MATRIX_MVP, mixed_deformationVertPos);
+//			Out.position = mul(UNITY_MATRIX_MVP, In.position);
 			 
 			Out.texCoord = In.texCoord;
 			 
@@ -76,7 +77,7 @@ SubShader {
 			float4 outColor;
 			float4 addColor;
 			float4 colorMap;
-			float variationMixedColor;
+			float4 variationMixedColor;
 			float4 emmiveMaskMap;
 			float4 uvScaleTranslate;
 			 
@@ -86,15 +87,16 @@ SubShader {
 			 
 			 
 			float2 uv = (In.texCoord - 0.5f) * uvScaleTranslate.xy + uvScaleTranslate.zw + (_Time * SineSpeed * offsetVectorXY )  + 0.5f;
+//			float2 uv = In.texCoord;
 			 
 			colorMap = tex2D(_MainTex , uv);
 			emmiveMaskMap = tex2D(_lavaEmissiveMaskTexture , uv);
 			addColor = _Color;
 //			 
 //			 
-//			variationMixedColor = variationMixedColor + (cos(sin((_Time/4.0f) *  addMixVal)));
+			variationMixedColor = (cos(sin((_Time/4.0f) *  addMixVal)));
 //			 
-			outColor.rgb += ( colorMap.rgb * addColor.rgb ) * emmiveMaskMap.rgb;
+			outColor.rgb += ( colorMap.rgb * addColor.rgb ) * (emmiveMaskMap.rgb + variationMixedColor) ;
 //			outColor.rgb = colorMap.rgb;
 			outColor.a = 1.0f;
 			 
