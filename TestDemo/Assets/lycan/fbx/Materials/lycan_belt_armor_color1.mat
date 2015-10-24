@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: lycan_belt_armor_color1
-  m_Shader: {fileID: 4800000, guid: 9d0c7301091b949c0be01f99c0953cbe, type: 3}
+  m_Shader: {fileID: 4800000, guid: bd9a930ccd81841f9a9ed2fa24f75931, type: 3}
   m_ShaderKeywords:
   - _DETAIL1BLENDMODE_OFF
   m_CustomRenderQueue: -1
@@ -37,16 +37,16 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _maskmap1
+          name: _maskmap2
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 3df6a5d0f86804ad79a00f04dbd1abd4, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _maskmap2
+          name: _maskmap1
         second:
-          m_Texture: {fileID: 2800000, guid: 3df6a5d0f86804ad79a00f04dbd1abd4, type: 3}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -84,12 +84,16 @@ Material:
         second: 1
       data:
         first:
-          name: _rimlightscale
+          name: _alpha
         second: 1
       data:
         first:
-          name: _rimlightblendtofull
+          name: _rimlightscale
         second: 0
+      data:
+        first:
+          name: _rimlightblendtofull
+        second: 1
       data:
         first:
           name: _specularexponent
@@ -97,19 +101,15 @@ Material:
       data:
         first:
           name: _specularscale
-        second: 1
+        second: 0
       data:
         first:
           name: _specularblendtofull
-        second: 0
+        second: 1
       data:
         first:
           name: _selfillumblendtofull
         second: 0
-      data:
-        first:
-          name: _alpha
-        second: 1
       data:
         first:
           name: _HueShift

@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: depth
-  m_Shader: {fileID: 4800000, guid: a4a7fa655545e43129b07a62ecc5fc43, type: 3}
+  m_Shader: {fileID: 4800000, guid: 91fd63a62b9d04f599aeff6119df1c45, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -17,7 +17,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 344163141f8e34fc8a34ad76085f76e3, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -27,11 +27,52 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _basetexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 7d8493307988fb64d810a1d2d47d2c70, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _matcap
+        second:
+          m_Texture: {fileID: 2800000, guid: cae44471c0e978742985c5d5402fe9da, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _Ramp
+        second:
+          m_Texture: {fileID: 2800000, guid: db2d6877f60f3024a9820547b483897c, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Shininess
         second: 1
+      data:
+        first:
+          name: _ambientscale
+        second: 1
+      data:
+        first:
+          name: _diffusescale
+        second: 1
+      data:
+        first:
+          name: _mulscale
+        second: .800000012
+      data:
+        first:
+          name: _addscale
+        second: .800000012
+      data:
+        first:
+          name: _RimPower
+        second: .5
     m_Colors:
       data:
         first:
@@ -41,3 +82,11 @@ Material:
         first:
           name: _SpecColor
         second: {r: .573529422, g: .573529422, b: .573529422, a: 1}
+      data:
+        first:
+          name: _SColor
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _RimColor
+        second: {r: .800000012, g: .800000012, b: .800000012, a: .600000024}

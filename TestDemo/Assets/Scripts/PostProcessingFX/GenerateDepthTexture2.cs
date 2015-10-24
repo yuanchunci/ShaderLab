@@ -15,13 +15,12 @@ public class GenerateDepthTexture2 : MonoBehaviour {
 	private Matrix4x4 biasMatrix;
 	private Camera depthCamera;
 	private RenderTexture depthTexture;
-	private BlurOptimized blur;
+	private bool isActive = true;
+	private bool _isActive = true;
 	// Use this for initialization
 	void Awake () {
 		GameObject go = new GameObject("depthCamera");
 		depthCamera = go.AddComponent<Camera>();
-//		gameObject.AddComponent<BlurOptimized>().shader = Shader.Find("Hidden/FastBlur");
-//		blur = gameObject.GetComponent<BlurOptimized>();
 		depthCamera.transform.position = Vector3.zero;
 		depthCamera.transform.rotation = transform.rotation;
 		depthCamera.transform.localPosition += transform.forward * Near;
@@ -87,70 +86,48 @@ public class GenerateDepthTexture2 : MonoBehaviour {
 			Shader.DisableKeyword("SOFT_SHADOW_4Samples");
 			Shader.EnableKeyword("SOFT_SHADOW_4x4");
 		}
+
+		if(GUI.Button(new Rect(Screen.width - 150, 400, 150,100), isActive?"Disable":"Enable"))
+		{
+			isActive = !isActive;
+		}
+
+		Bias = GUI.HorizontalSlider(new Rect(Screen.width - 150, 500, 150,100), Bias, -0.01F, 0.01F);
 	}
 
 	void LateUpdate()
 	{
-		depthCamera.cullingMask = casterLayer;
-		depthCamera.orthographicSize = Size;
-		depthCamera.farClipPlane = Far;
-
-		depthCamera.Render();
-
-//		RenderTexture temp = RenderTexture.GetTemporary(depthTexture.width, depthTexture.height, 16, RenderTextureFormat.ARGB32);
-//		blur.CallOnRenderImage(depthTexture, temp);
-//		Graphics.Blit(temp, depthTexture);
-//		RenderTexture.ReleaseTemporary(temp);
-
-		Matrix4x4 depthProjectionMatrix = depthCamera.projectionMatrix;
-		Matrix4x4 depthViewMatrix = depthCamera.worldToCameraMatrix;
-		Matrix4x4 depthVP = depthProjectionMatrix * depthViewMatrix ;
-		Matrix4x4 depthVPBias = biasMatrix * depthVP;
-		Shader.SetGlobalMatrix("_depthVPBias", depthVPBias);
-		Shader.SetGlobalMatrix("_depthV", depthViewMatrix);
-		Shader.SetGlobalTexture("_kkShadowMap", depthCamera.targetTexture);
-		Shader.SetGlobalFloat("_bias", Bias);
-		Shader.SetGlobalFloat("_strength", 1 - Strength);
-		Shader.SetGlobalFloat("_texmapScale", 1f/TextureSize);
-		Shader.SetGlobalFloat("_farplaneScale", 1/Far);
-//		Debug.Log("farplane " + depthCamera.farClipPlane);
-
+		if(_isActive != isActive)
+		{
+			_isActive = isActive;
+			if(isActive)
+			{
+				depthTexture = new RenderTexture(TextureSize,TextureSize, 16, RenderTextureFormat.ARGB32);
+				depthTexture.filterMode = FilterMode.Point;
+			}else
+			{
+				RenderTexture.DestroyImmediate(depthTexture);
+			}
+		}
+		if(isActive)
+		{
+			depthCamera.cullingMask = casterLayer;
+			depthCamera.orthographicSize = Size;
+			depthCamera.farClipPlane = Far;
+			depthCamera.Render();
+			Matrix4x4 depthProjectionMatrix = depthCamera.projectionMatrix;
+			Matrix4x4 depthViewMatrix = depthCamera.worldToCameraMatrix;
+			Matrix4x4 depthVP = depthProjectionMatrix * depthViewMatrix ;
+			Matrix4x4 depthVPBias = biasMatrix * depthVP;
+			Shader.SetGlobalMatrix("_depthVPBias", depthVPBias);
+			Shader.SetGlobalMatrix("_depthV", depthViewMatrix);
+			Shader.SetGlobalTexture("_kkShadowMap", depthCamera.targetTexture);
+			Shader.SetGlobalFloat("_bias", Bias);
+			Shader.SetGlobalFloat("_strength", 1 - Strength);
+			Shader.SetGlobalFloat("_texmapScale", 1f/TextureSize);
+			Shader.SetGlobalFloat("_farplaneScale", 1/Far);
+		}
 	}
 
-	void aOnRenderImage (RenderTexture source, RenderTexture destination) {
-
-
-//			depthTexture.hideFlags = HideFlags.HideAndDontSave;
-//		Graphics.Blit( source, depthTexture );
-//		Graphics.Blit (depthTexture, destination);
-//		RenderTexture.ReleaseTemporary(depthTexture);
-	}
-
-	Color EncodeFloatRGBA( float v )
-	{
-		Vector4 kEncodeMul = new Vector4(1.0f, 255.0f, 65025.0f, 16581375.0f);
-		float kEncodeBit = 1.0f/255.0f;
-		Vector4 enc = kEncodeMul * v;
-		enc = frac (enc);
-		enc = new Vector4(enc.y, enc.z, enc.w, enc.w);
-		enc -= enc * kEncodeBit;
-		return enc;
-	}
-	
-	Vector4 frac( Vector4 orig )
-	{
-		return new Vector4( frac( orig.x ), frac( orig.y ), frac( orig.z ), frac( orig.w ) );
-	}
-	
-	float frac( float orig )
-	{
-		float whole = Mathf.Floor( orig );
-		return orig - whole;
-	}
-	
-	Vector4 mul( Vector4 lhs, Vector4 rhs )
-	{
-		return new Vector4( lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z, lhs.w * rhs.w );
-	}
 
 }

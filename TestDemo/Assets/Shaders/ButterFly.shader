@@ -1,4 +1,4 @@
-﻿Shader "Custom/ButterFly" {
+﻿Shader "kokichi/Environment/ButterFly" {
 	Properties {
 		_MainTex("Diffuse (RGB) Self-Illumination (A)", 2D)	= "white" {}
 		_Vec("Velocity", Vector) = (1,1,1,1)
@@ -35,23 +35,24 @@
 		{
 			fixed4 pos : SV_POSITION;
 			fixed2 uv : TEXCOORD0;
+			fixed4 color : COLOR;
 		};
 
 		v2f vert(app_data input) 
 		{
 			v2f output;
-			fixed4 amount = _Vec * input.color.r * abs(input.vertex.y);
-			amount = lerp(amount, amount * sin(_Frequency * _Time.z) , _VecAmount);
-			output.pos = mul(UNITY_MATRIX_MVP, input.vertex + amount);
+			fixed4 amount = _Vec * input.color.r;
+			amount = lerp(amount, amount * sin(_Frequency * _Time.z), _VecAmount);
+			output.pos = mul(UNITY_MATRIX_MVP, input.vertex) + amount;
 			output.uv = TRANSFORM_TEX(input.texcoord, _MainTex);
+			output.color = input.color;
 			return output;
 		}
  
          fixed4 frag(v2f input) : COLOR
          {
-         	fixed4 finalColor = (0,0,0,1);
-         	fixed4 diffuseColor = tex2D(_MainTex, input.uv.xy);
-			finalColor = diffuseColor;
+         	fixed4 finalColor = tex2D(_MainTex, input.uv.xy) * 1.5;
+         	finalColor.a *= input.color.a;
             return finalColor;
          }
 		ENDCG

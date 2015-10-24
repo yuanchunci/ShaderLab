@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: floorBot_male_body
-  m_Shader: {fileID: 4800000, guid: adf3854706e1b164188776177d70b5d6, type: 3}
+  m_Shader: {fileID: 4800000, guid: 46fb80c2649275e4e8570aa55538bf35, type: 3}
   m_ShaderKeywords:
   - _DETAIL1BLENDMODE_OFF
   - _GAMMA_SPACE
