@@ -10,7 +10,7 @@ Shader "kokichi/Hidden/Outline"
 	SubShader
 	{
 		Tags { "RenderType"="Opaque" "Queue"="Geometry" }
-		
+		LOD 300
 		//Outline default
 		Pass
 		{
@@ -27,29 +27,33 @@ Shader "kokichi/Hidden/Outline"
 			#include "UnityCG.cginc"
 			struct a2v
 			{
-				fixed4 vertex : POSITION;
-				fixed3 normal : NORMAL;
+				float4 vertex : POSITION;
+				float3 normal : NORMAL;
 			}; 
 			
 			struct v2f
 			{
-				fixed4 pos : POSITION;
+				float4 pos : POSITION;
 			};
 			
 			fixed _Outline;
 			fixed4 _OutlineColor;
 			
+			fixed4 _flashColor;
+			fixed _flashValue;
+
 			v2f vert (a2v v)
 			{
 				v2f o;
-				fixed4 pos = mul( UNITY_MATRIX_MV, v.vertex + fixed4(v.normal,0) * _Outline);
+				float4 pos = mul( UNITY_MATRIX_MV, v.vertex + float4(v.normal,0) * _Outline);
 				o.pos = mul(UNITY_MATRIX_P, pos);
 				return o;
 			}
 			
 			fixed4 frag (v2f IN) : COLOR
 			{
-				return _OutlineColor;
+				fixed4 finalColor = lerp(_OutlineColor, _flashColor, _flashValue);
+				return finalColor;
 			}
 			ENDCG
 		}

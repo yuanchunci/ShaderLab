@@ -3,6 +3,7 @@ Shader "kokichi/Mobile/Rim/MatCap/Textured"
 	Properties
 	{
 		_basetexture ("Base (RGB)", 2D) = "white" {}
+		_color("Main Color", Color) = (1,1,1,1)
 		_matcap ("MatCap (RGB)", 2D) = "white" {}
 		_rimTex ("Rim Tex (RGB)", 2D) = "black" {}
 		_ambientscale("Ambient Scale", Float) = 1.0
@@ -22,6 +23,7 @@ Shader "kokichi/Mobile/Rim/MatCap/Textured"
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
+			#pragma multi_compile GAMMA_ON GAMMA_OFF
 			#pragma fragmentoption ARB_precision_hint_fastest
 			#include "UnityCG.cginc" 
 			
@@ -33,6 +35,7 @@ Shader "kokichi/Mobile/Rim/MatCap/Textured"
 			
 			ENDCG
 		}
+		
 		
 		
 	}

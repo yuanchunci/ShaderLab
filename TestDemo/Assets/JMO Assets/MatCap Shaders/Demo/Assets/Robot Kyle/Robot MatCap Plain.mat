@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Robot MatCap Plain
-  m_Shader: {fileID: 4800000, guid: 10c589475313148be96c63f358183a34, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4a6aba8ad13e9704687a790b59eaf008, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -29,42 +29,12 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _basetexture
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _matcap
-        second:
-          m_Texture: {fileID: 2800000, guid: 0adab577938f1fc47ad24a89e9f4d42a, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _MatCap
         second:
-          m_Texture: {fileID: 2800000, guid: 00435e4e38a933349be6bd506f52d210, type: 3}
+          m_Texture: {fileID: 2800000, guid: a24bbcd82b22c6e46a6723e270e807fb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
-      data:
-        first:
-          name: _ambientscale
-        second: 0
-      data:
-        first:
-          name: _diffusescale
-        second: 0
-      data:
-        first:
-          name: _mulscale
-        second: 0
-      data:
-        first:
-          name: _addscale
-        second: 1
       data:
         first:
           name: _RotationSpeed

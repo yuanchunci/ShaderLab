@@ -5,18 +5,18 @@
   }
  
   SubShader {
-    Tags { "Queue" = "Geometry" }
+    Tags { "Queue" = "Transparent" }
  
     Pass {
       // Disable lighting, we're only using the lightmap
       Lighting Off
+      ZWrite Off
+      Blend SrcAlpha OneMinusSrcAlpha
       Stencil
 	  {
 	  		Ref 1
 			Comp Always
 			Pass Replace
-			Fail Zero
-			ZFail Zero
 	  }
       CGPROGRAM
       // Must be a vert/frag shader, not a surface shader: the necessary variables
@@ -73,6 +73,7 @@
         // }
  
 //        main_color.rgb *= DecodeLightmap(tex2D(unity_Lightmap, i.uv1));
+		main_color.a = 0.5;
         return main_color;
       }
       ENDCG

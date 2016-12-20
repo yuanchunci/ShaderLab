@@ -62,7 +62,7 @@ Shader "MatCap/Bumped/Textured Multiply"
 					half2 capCoord = half2(dot(i.c0, normals), dot(i.c1, normals));
 					float4 mc = tex2D(_MatCap, capCoord*0.5+0.5);
 					
-					return tex * mc * 2.0;
+					return tex * mc * 2;
 				}
 			ENDCG
 		}

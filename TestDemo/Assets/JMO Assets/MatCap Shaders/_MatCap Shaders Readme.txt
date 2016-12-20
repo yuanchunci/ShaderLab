@@ -1,7 +1,7 @@
-MatCap Shaders Pack, version 1.33
-2015/03/05
+MatCap Shaders Pack, version 1.362
+2015/10/01
 (c) 2015 - Jean Moreno
-=================================
+===========================================
 
 This is a pack of MatCap-like shaders, used in popular 3d software such as ZBrush or Sculptris.
 They allow to determine the whole shading model of an object with a single texture without using any lights.
@@ -11,7 +11,9 @@ They are based on the MatCap shader by Daniel Brauer, from the Unify Community: 
 Optimizations have been made to make them much faster, and to add some features such as adding a regular texture on top of the matcap one.
 
 "Vertex" are the defaults shader, where most of the calculations are done per-vertex, so they are very fast.
+
 "Bumped" are shaders with normap map support, with more calculations being made per-pixel, and as such are slower.
+"Accurate Calculation" can help with non-uniform scaling and skinned mesh renderers in the bump shader, but it is slower.
 
 ========================
 
@@ -22,6 +24,24 @@ http://jeanmoreno.com/unity
 
 Release notes:
 --------------
+v1.362
+- updated Welcome Screen
+
+v1.361
+- added Welcome Screen
+
+v1.36 (Unity 5)
+- fixed tangents normalization in non-accurate bumped shaders (should fix scaling issues)
+
+v1.351 (Unity 5)
+- rewrote how the matcap is calculated, fixing scaling and rotation issues with Unity 5 (for real hopefully!)
+
+v1.35 (Unity 5)
+- fixed scaling issues with Unity 5
+
+v1.34 (Unity 5)
+- updated compatibility with Unity 5
+
 v1.33
 - updated "JMO Assets" menu
 

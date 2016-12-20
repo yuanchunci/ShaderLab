@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: tf 1
-  m_Shader: {fileID: 4800000, guid: 59dd7b50e6bcf42f198fb99a347af925, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3b31d7ae6664548aa8672b09bb174455, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -79,6 +79,13 @@ Material:
       data:
         first:
           name: _SpecularTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecularMask
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}

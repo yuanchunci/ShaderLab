@@ -29,13 +29,6 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _Ramp
-        second:
-          m_Texture: {fileID: 2800000, guid: 7fec3cfa95f7cb041923abd566c76e9d, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
           name: _Cube
         second:
           m_Texture: {fileID: 8900000, guid: c640abca947dbda4d93443a80040c2da, type: 2}
@@ -43,16 +36,23 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _GlitterTex
+          name: _BumpTex
         second:
-          m_Texture: {fileID: 2800000, guid: 284dd42c7c4f89a42aee1d21c7fccc31, type: 3}
+          m_Texture: {fileID: 2800000, guid: 27aec5e23442e854393a614f079b974f, type: 3}
           m_Scale: {x: 3, y: 2}
           m_Offset: {x: 0, y: 0}
       data:
         first:
-          name: _BumpTex
+          name: _Ramp
         second:
-          m_Texture: {fileID: 2800000, guid: 27aec5e23442e854393a614f079b974f, type: 3}
+          m_Texture: {fileID: 2800000, guid: 7fec3cfa95f7cb041923abd566c76e9d, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _GlitterTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 284dd42c7c4f89a42aee1d21c7fccc31, type: 3}
           m_Scale: {x: 3, y: 2}
           m_Offset: {x: 0, y: 0}
       data:
@@ -94,6 +94,14 @@ Material:
         second: .0555577427
       data:
         first:
+          name: _Coverage
+        second: .5
+      data:
+        first:
+          name: _Smooth
+        second: .5
+      data:
+        first:
           name: _RampPower
         second: 1
       data:
@@ -118,10 +126,6 @@ Material:
         second: 1
       data:
         first:
-          name: _Smooth
-        second: .5
-      data:
-        first:
           name: _Transition
         second: .5
       data:
@@ -132,10 +136,6 @@ Material:
         first:
           name: _Falloff
         second: .307142884
-      data:
-        first:
-          name: _Coverage
-        second: .5
     m_Colors:
       data:
         first:

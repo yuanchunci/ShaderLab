@@ -8,7 +8,7 @@ PlayerSettings:
   defaultScreenOrientation: 3
   targetDevice: 2
   targetGlesGraphics: 1
-  targetIOSGraphics: -1
+  targetIOSGraphics: 2
   targetResolution: 0
   accelerometerFrequency: 60
   companyName: nfury
@@ -85,7 +85,7 @@ PlayerSettings:
   ForceSDCardPermission: 0
   CreateWallpaper: 0
   APKExpansionFiles: 0
-  StripUnusedMeshComponents: 0
+  StripUnusedMeshComponents: 1
   iPhoneSdkVersion: 988
   iPhoneTargetOSVersion: 20
   uIPrerenderedIcon: 0

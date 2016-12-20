@@ -79,14 +79,14 @@
 				
 				fixed3 H = normalize(lightDir + viewDir);
 				fixed NdotH = max(0, dot(normalDir, H));
-				fixed spec = pow(NdotH, _SpecularExponent * specMask.a) * saturate(NdotL);
+				fixed spec = pow(NdotH, _SpecularExponent) * saturate(NdotL);
 				
 				fixed3 rim = pow( max(0, dot(fixed3(0,1,0), normalDir)), _RimPower) * _RimColor;
 				
 				
 				fixed3 diffuseLight = diffuseWarp * _LightColor0.rgb;
 				fixed3 specLight = spec * _LightColor0.rgb * specMask.r;
-				fixed3 rimLight = rim * specMask.g;
+				fixed3 rimLight = rim * specMask.b;
 				
 //				finalColor.rgb = diffuseLight;
 				finalColor.rgb = color.rgb * diffuseLight;

@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: defaultMat
-  m_Shader: {fileID: 4800000, guid: 02e1e9c264b1f4a3f96e027c7d4cb176, type: 3}
+  m_Shader: {fileID: 4800000, guid: 91fd63a62b9d04f599aeff6119df1c45, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -46,6 +46,20 @@ Material:
           name: _matcap
         second:
           m_Texture: {fileID: 2800000, guid: daa6a0ce484bc1147ba58a37cd90b5da, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _rimTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 1bcd003609627e945a1c0942697a9ce3, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _diffuseMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 344163141f8e34fc8a34ad76085f76e3, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -102,13 +116,6 @@ Material:
           name: _ramp
         second:
           m_Texture: {fileID: 2800000, guid: 6b8bb9e15447b4c5cafae532877b57a7, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _diffuseMap
-        second:
-          m_Texture: {fileID: 2800000, guid: 344163141f8e34fc8a34ad76085f76e3, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -195,13 +202,6 @@ Material:
           m_Texture: {fileID: 2800000, guid: f2dadaf5c18c7460ba8665e518dca82c, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _rimTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 1bcd003609627e945a1c0942697a9ce3, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -209,8 +209,8 @@ Material:
         second: 0
       data:
         first:
-          name: _Outline
-        second: .0187500007
+          name: _Shininess
+        second: .699999988
       data:
         first:
           name: _ambientscale
@@ -229,16 +229,20 @@ Material:
         second: 3
       data:
         first:
-          name: _Shininess
-        second: .699999988
-      data:
-        first:
-          name: _OutlineDiffusion
-        second: 0
+          name: _Outline
+        second: .00625000056
       data:
         first:
           name: _rimlightscale
         second: 1
+      data:
+        first:
+          name: _rimlightpower
+        second: 15.8000002
+      data:
+        first:
+          name: _OutlineDiffusion
+        second: 0
       data:
         first:
           name: _rimlightblendtofull
@@ -271,10 +275,6 @@ Material:
         first:
           name: _ZSmooth
         second: -2.96428561
-      data:
-        first:
-          name: _rimlightpower
-        second: 15.8000002
       data:
         first:
           name: _AlphaCut
@@ -375,6 +375,10 @@ Material:
         first:
           name: _OutlineThickness
         second: .300000012
+      data:
+        first:
+          name: _flashValue
+        second: 0
     m_Colors:
       data:
         first:
@@ -386,32 +390,40 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _OutlineColor
-        second: {r: 0, g: 0, b: 0, a: 1}
-      data:
-        first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
-      data:
-        first:
           name: _SpecColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
-          name: _ShadowColor
+          name: _OutlineColor
         second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _color
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _rimlightcolor
         second: {r: 1, g: .972413778, b: 0, a: 0}
       data:
         first:
-          name: _specularcolor
+          name: _Emission
+        second: {r: 0, g: 0, b: 0, a: 0}
+      data:
+        first:
+          name: _diffuseColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _behindwallColor
-        second: {r: .00475779036, g: .381278962, b: .647058845, a: .517647088}
+        second: {r: 0, g: .420689583, b: 1, a: .294117659}
+      data:
+        first:
+          name: _ShadowColor
+        second: {r: 0, g: 0, b: 0, a: 1}
+      data:
+        first:
+          name: _specularcolor
+        second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
           name: _SColor
@@ -423,10 +435,6 @@ Material:
       data:
         first:
           name: _ScrollSpeed
-        second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _diffuseColor
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
@@ -452,3 +460,7 @@ Material:
         first:
           name: _underwallColor
         second: {r: .852941155, g: .301038027, b: .301038027, a: 1}
+      data:
+        first:
+          name: _flashColor
+        second: {r: 1, g: 1, b: 1, a: 1}

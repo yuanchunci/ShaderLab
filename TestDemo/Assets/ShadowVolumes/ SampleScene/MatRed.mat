@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: MatRed
-  m_Shader: {fileID: 4800000, guid: 0abac1fd5a5ae4f458a75de9e781d8ce, type: 3}
+  m_Shader: {fileID: 4800000, guid: 91fd63a62b9d04f599aeff6119df1c45, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -24,7 +24,7 @@ Material:
         first:
           name: _basetexture
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: f14c656ee363b4fec8e840f183f6c6fd, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -59,10 +59,6 @@ Material:
         second: 22
       data:
         first:
-          name: _Outline
-        second: .00499999989
-      data:
-        first:
           name: _ambientscale
         second: 1
       data:
@@ -81,6 +77,10 @@ Material:
         first:
           name: _rimlightscale
         second: 1
+      data:
+        first:
+          name: _Outline
+        second: .00499999989
       data:
         first:
           name: _rimlightblendtofull
@@ -120,12 +120,16 @@ Material:
         second: {r: .852941155, g: .188148767, b: .724567235, a: 1}
       data:
         first:
-          name: _OutlineColor
-        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
-      data:
-        first:
           name: _rimlightcolor
         second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
       data:
         first:
           name: _specularcolor

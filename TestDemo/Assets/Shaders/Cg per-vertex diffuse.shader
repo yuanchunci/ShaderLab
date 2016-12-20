@@ -3,7 +3,7 @@
       _Color ("Diffuse Material Color", Color) = (1,1,1,1) 
    }
    SubShader {
-   	Tags{"Queue"="Geometry+1"}
+   	Tags{"Queue"="Geometry"}
       Pass {	
          Tags { "LightMode" = "ForwardBase" } 
            // pass for first light source

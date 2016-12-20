@@ -81,7 +81,7 @@ Material:
       data:
         first:
           name: _ambientscale
-        second: 1
+        second: 1.87
       data:
         first:
           name: _alpha

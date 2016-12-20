@@ -3,6 +3,7 @@ Shader "kokichi/Mobile/MatCap/Textured Transparent Outline PlanarShadow"
 	Properties
 	{
 		_basetexture ("Base (RGB) Alpha(A)", 2D) = "white" {}
+		_color("Main Color", Color) = (1,1,1,1)
 		_matcap ("MatCap (RGB)", 2D) = "white" {}
 		_ambientscale("Ambient Scale", Float) = 1.0
 		_diffusescale("Diffuse Scale", Float) = 1.0
@@ -18,11 +19,6 @@ Shader "kokichi/Mobile/MatCap/Textured Transparent Outline PlanarShadow"
 		Pass
 		{
 			Tags { "LIGHTMODE"="ForwardBase" "IGNOREPROJECTOR"="true" "RenderType"="Transparent" }
-			Stencil
-			{
-				Comp Always
-				Pass Zero
-			}
 			Blend SrcAlpha OneMinusSrcAlpha
 			CGPROGRAM
 			#pragma vertex vert

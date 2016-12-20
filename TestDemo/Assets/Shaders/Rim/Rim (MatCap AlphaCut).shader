@@ -3,6 +3,7 @@ Shader "kokichi/Mobile/Rim/MatCap/Textured Alpha Cutoff"
 	Properties
 	{
 		_basetexture ("Base (RGB) Cutoff(A)", 2D) = "white" {}
+		_color("Main Color", Color) = (1,1,1,1)
 		_matcap ("MatCap (RGB)", 2D) = "white" {}
 		_ambientscale("Ambient Scale", Float) = 1.0
 		_diffusescale("Diffuse Scale", Float) = 1.0

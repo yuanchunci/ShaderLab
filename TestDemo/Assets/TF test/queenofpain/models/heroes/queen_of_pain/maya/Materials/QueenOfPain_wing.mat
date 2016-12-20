@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: QueenOfPain_wing
-  m_Shader: {fileID: 4800000, guid: 3b31d7ae6664548aa8672b09bb174455, type: 3}
+  m_Shader: {fileID: 4800000, guid: e3f5c3ac2657d469ba4302c323435f7b, type: 3}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
   m_SavedProperties:
@@ -45,11 +45,11 @@ Material:
       data:
         first:
           name: _RimPower
-        second: 6.0999999
+        second: 44
       data:
         first:
           name: _SpecularExponent
-        second: 25.6000004
+        second: 16
     m_Colors:
       data:
         first:

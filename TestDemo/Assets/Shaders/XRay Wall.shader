@@ -4,6 +4,7 @@
 	}
  
 	SubShader {
+		Tags { "RenderType"="Transparent" "Queue" = "Transparent" }
 		Pass {
 			Name "WALL"
 			Cull Off

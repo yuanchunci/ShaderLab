@@ -980,10 +980,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   shader: {fileID: 4800000, guid: 34d88cecbb605476aa448e8a43022f5a, type: 3}
-  Near: -20
-  Far: 200
+  Near: -10
+  Far: 50
   Size: 10
-  TextureSize: 256
+  TextureSize: 2048
   Bias: .00300000003
   Strength: .529999971
 --- !u!1 &447269303

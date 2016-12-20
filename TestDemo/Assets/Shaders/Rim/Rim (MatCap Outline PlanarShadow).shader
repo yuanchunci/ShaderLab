@@ -3,6 +3,7 @@ Shader "kokichi/Mobile/Rim/MatCap/Textured Outline PlanarShadow"
 	Properties
 	{
 		_basetexture ("Base (RGB) Cutoff(A)", 2D) = "white" {}
+		_color("Main Color", Color) = (1,1,1,1)
 		_matcap ("MatCap (RGB)", 2D) = "white" {}
 		_rimTex ("Rim Tex (RGB)", 2D) = "black" {}
 		_ambientscale("Ambient Scale", Float) = 1.0
@@ -21,15 +22,12 @@ Shader "kokichi/Mobile/Rim/MatCap/Textured Outline PlanarShadow"
 		Pass
 		{
 			Tags { "LIGHTMODE"="ForwardBase" "RenderType"="Opaque" }
-			Stencil
-			{
-				Comp Always
-				Pass Zero
-			}
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
 			#pragma fragmentoption ARB_precision_hint_fastest
+			#pragma multi_compile GAMMA_ON GAMMA_OFF
+			
 			#include "UnityCG.cginc" 
 			
 			#define RIM_LIGHT	

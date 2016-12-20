@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: lambert2
+  m_Shader: {fileID: 4800000, guid: 872408b6d57354a5a99281ab8eee870b, type: 3}
+  m_ShaderKeywords: []
+  m_CustomRenderQueue: -1
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _BumpMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 95ea12e77acf7441589d0396f3625da1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _basetexture
+        second:
+          m_Texture: {fileID: 2800000, guid: 6e177f04aaaef43539576bb211a2f5c1, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _matcap
+        second:
+          m_Texture: {fileID: 2800000, guid: c1e2730c39f12f74eb3bff70b56077dc, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _rimTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 1bcd003609627e945a1c0942697a9ce3, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _SpecMap
+        second:
+          m_Texture: {fileID: 2800000, guid: 0ac028b1223a647d4a8064aef25cb669, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Shininess
+        second: .131279275
+      data:
+        first:
+          name: _ambientscale
+        second: 1
+      data:
+        first:
+          name: _diffusescale
+        second: 1
+      data:
+        first:
+          name: _mulscale
+        second: .800000012
+      data:
+        first:
+          name: _addscale
+        second: .800000012
+      data:
+        first:
+          name: _Outline
+        second: 0
+      data:
+        first:
+          name: _rimlightscale
+        second: .100000001
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: .5, g: .5, b: .5, a: 1}
+      data:
+        first:
+          name: _color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _OutlineColor
+        second: {r: .200000003, g: .200000003, b: .200000003, a: 1}
+      data:
+        first:
+          name: _rimlightcolor
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _LuminateVector
+        second: {r: .300000012, g: .579999983, b: .119999997, a: .349999994}

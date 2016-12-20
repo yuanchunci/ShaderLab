@@ -3,6 +3,7 @@ Shader "kokichi/Mobile/Rim/MatCap/Textured Transparent Outline"
 	Properties
 	{
 		_basetexture ("Base (RGB) Cutoff(A)", 2D) = "white" {}
+		_color("Main Color", Color) = (1,1,1,1)
 		_matcap ("MatCap (RGB)", 2D) = "white" {}
 		_ambientscale("Ambient Scale", Float) = 1.0
 		_diffusescale("Diffuse Scale", Float) = 1.0
@@ -10,7 +11,6 @@ Shader "kokichi/Mobile/Rim/MatCap/Textured Transparent Outline"
 		_addscale("Add Scale", Float) = 0.8
 		_rimlightcolor ("Rim Light Color", Color) = (1.0, 1.0, 1.0, 1.0)
 		_rimlightscale ("Rim Light Scale", Float) = 1.0
-		_rimlightpower ("Rim Light Power", Float) = 0.2
 		_Outline ("Outline Width", Range(0,0.05)) = 0.005
 		_OutlineColor ("Outline Color", Color) = (0.2, 0.2, 0.2, 1)
 	}

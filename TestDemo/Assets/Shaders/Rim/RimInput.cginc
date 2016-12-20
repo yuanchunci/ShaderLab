@@ -9,6 +9,7 @@ fixed _mulscale;
 fixed _addscale;
 #endif
 #ifdef MAT_CAP
+fixed4 _color;
 sampler2D _matcap;
 fixed _diffusescale;
 fixed _mulscale;
@@ -33,6 +34,21 @@ fixed _HueShift;
 fixed _Sat;
 fixed _Val;
 #endif
+
+#ifdef FLASH_COLOR
+fixed4 _flashColor;
+fixed _flashValue;
+#endif
+
+#ifdef SPECULAR
+uniform fixed4 _LightDir;
+uniform fixed _Shininess;
+uniform fixed4 _LuminateVector;
+#endif
+
+#ifdef REFLECTIVE
+uniform float4x4 _World2Receiver; 
+#endif
 struct app_data
 {
 	fixed4 vertex : POSITION;
@@ -45,10 +61,18 @@ struct v2f
 	fixed4 pos : SV_POSITION;
 	fixed2 tex : TEXCOORD0;
 	fixed3 diffuse : TEXCOORD1;
+	
 #if defined(RIM_LIGHT) && !defined(MAT_CAP)
 	fixed3 rim : TEXCOORD2;
 #endif
+
 #if defined(MAT_CAP) || defined(TOON_RAMP)
 	fixed2 cap : TEXCOORD3;
 #endif
+
+#ifdef SPECULAR
+	fixed3 posWorld : TEXCOORD4;
+	fixed3 normalWorld : TEXCOORD5;
+#endif
+
 };
